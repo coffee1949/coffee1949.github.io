@@ -1,0 +1,19 @@
+{
+    "title": "前端笔记",
+    "author": "coffee1949",
+    "description": "前端笔记(front-end-notes)",
+    "root": "workspace",
+    "language" : "zh-hans",
+    "links" : {
+        "sidebar" : {
+            "知乎" : "https://www.zhihu.com/people/codeing.cn/posts"
+        }
+    },
+    "styles": {
+        "website": "styles/website.css"
+    },
+    "plugins": [
+        "-search",
+        "search-pro"
+    ]
+}

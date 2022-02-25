@@ -1,0 +1,9 @@
+/*  */
+.book-summary .summary .header{
+    font-size: 12px;
+}
+
+h1{
+    /* border-bottom: 1px solid #cccccc; */
+    border-bottom: 1px solid rgba(0,0,0,.07);
+}

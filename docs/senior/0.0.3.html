@@ -1,0 +1,685 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>亿.0.3 实现虚拟DOM · 前端笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="coffee1949">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="0.0.2.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://www.zhihu.com/people/codeing.cn/posts" target="_blank" class="custom-link">知乎</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言.写给有缘人
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">零、GITBOOK</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../gitbook/0.0.0.html">
+            
+                <a href="../gitbook/0.0.0.html">
+            
+                    
+                    零.0.0 从零开始使用gitbook搭建文档站点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../gitbook/0.0.1.html">
+            
+                <a href="../gitbook/0.0.1.html">
+            
+                    
+                    零.0.1 gitbook插件集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">壹、JAVASCRIPT && ECMASCRIPT</li>
+        
+        
+    
+
+    
+        
+        <li class="header">拾、GLOB</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../glob/0.0.0.html">
+            
+                <a href="../glob/0.0.0.html">
+            
+                    
+                    拾.0.0 glob介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../glob/0.0.1.html">
+            
+                <a href="../glob/0.0.1.html">
+            
+                    
+                    拾.0.1 强大的glob
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">佰、ROLLUP</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../rollup/0.0.0.html">
+            
+                <a href="../rollup/0.0.0.html">
+            
+                    
+                    佰.0.0 rollup介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../rollup/0.0.1.html">
+            
+                <a href="../rollup/0.0.1.html">
+            
+                    
+                    佰.0.1 rollup基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../rollup/0.0.2.html">
+            
+                <a href="../rollup/0.0.2.html">
+            
+                    
+                    佰.0.2 rollup打包格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../rollup/0.0.3.html">
+            
+                <a href="../rollup/0.0.3.html">
+            
+                    
+                    佰.0.3 rollup插件及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../rollup/0.0.4.html">
+            
+                <a href="../rollup/0.0.4.html">
+            
+                    
+                    佰.0.4 rollup配置文件内容
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">千、vite</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../vite/0.0.0.html">
+            
+                <a href="../vite/0.0.0.html">
+            
+                    
+                    千.0.0 vite介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../vite/0.0.1.html">
+            
+                <a href="../vite/0.0.1.html">
+            
+                    
+                    千.0.1 vite基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../vite/0.0.2.html">
+            
+                <a href="../vite/0.0.2.html">
+            
+                    
+                    千.0.2 vue2中使用vite
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">萬、xxxxx</li>
+        
+        
+    
+
+    
+        
+        <li class="header">亿、高级原理</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="0.0.0.html">
+            
+                <a href="0.0.0.html">
+            
+                    
+                    亿.0.0 数据响应式原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="0.0.1.html">
+            
+                <a href="0.0.1.html">
+            
+                    
+                    亿.0.1 双向数据绑定原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="0.0.2.html">
+            
+                <a href="0.0.2.html">
+            
+                    
+                    亿.0.2 MVVM原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="8.4" data-path="0.0.3.html">
+            
+                <a href="0.0.3.html">
+            
+                    
+                    亿.0.3 实现虚拟DOM
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >亿.0.3 实现虚拟DOM</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x5B9E;&#x73B0;&#x865A;&#x62DF;dom">&#x5B9E;&#x73B0;&#x865A;&#x62DF;DOM</h1>
+<p>&#x6700;&#x8FD1;&#x4E00;&#x4E24;&#x5E74;&#x524D;&#x7AEF;&#x6700;&#x706B;&#x7684;&#x6280;&#x672F;&#x83AB;&#x8FC7;&#x4E8E;ReactJS&#xFF0C;&#x5373;&#x4FBF;&#x4F60;&#x6CA1;&#x7528;&#x8FC7;&#x4E5F;&#x8BE5;&#x542C;&#x8FC7;&#xFF0C;ReactJS&#x7531;&#x4E1A;&#x754C;&#x9876;&#x5C16;&#x7684;&#x4E92;&#x8054;&#x7F51;&#x516C;&#x53F8;facebook&#x63D0;&#x51FA;&#xFF0C;&#x5176;&#x672C;&#x8EAB;&#x6709;&#x5F88;&#x591A;&#x5148;&#x8FDB;&#x7684;&#x8BBE;&#x8BA1;&#x601D;&#x8DEF;&#xFF0C;&#x6BD4;&#x5982;&#x9875;&#x9762;UI&#x7EC4;&#x4EF6;&#x5316;&#x3001;&#x865A;&#x62DF;DOM&#x7B49;&#x3002;&#x672C;&#x6587;&#x5C06;&#x5E26;&#x4F60;&#x89E3;&#x5F00;&#x865A;&#x62DF;DOM&#x7684;&#x795E;&#x79D8;&#x9762;&#x7EB1;&#xFF0C;&#x4E0D;&#x4EC5;&#x8981;&#x7406;&#x89E3;&#x5176;&#x539F;&#x7406;&#xFF0C;&#x800C;&#x4E14;&#x8981;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x57FA;&#x672C;&#x53EF;&#x7528;&#x7684;&#x865A;&#x62DF;DOM&#x3002;</p>
+<h3 id="1&#x4E3A;&#x4EC0;&#x4E48;&#x9700;&#x8981;&#x865A;&#x62DF;dom">1.&#x4E3A;&#x4EC0;&#x4E48;&#x9700;&#x8981;&#x865A;&#x62DF;DOM</h3>
+<p>DOM&#x662F;&#x5F88;&#x6162;&#x7684;&#xFF0C;&#x5176;&#x5143;&#x7D20;&#x975E;&#x5E38;&#x5E9E;&#x5927;&#xFF0C;&#x9875;&#x9762;&#x7684;&#x6027;&#x80FD;&#x95EE;&#x9898;&#x9C9C;&#x6709;&#x7531;JS&#x5F15;&#x8D77;&#x7684;&#xFF0C;&#x5927;&#x90E8;&#x5206;&#x90FD;&#x662F;&#x7531;DOM&#x64CD;&#x4F5C;&#x5F15;&#x8D77;&#x7684;&#x3002;&#x5982;&#x679C;&#x5BF9;&#x524D;&#x7AEF;&#x5DE5;&#x4F5C;&#x8FDB;&#x884C;&#x62BD;&#x8C61;&#x7684;&#x8BDD;&#xFF0C;&#x4E3B;&#x8981;&#x5C31;&#x662F;&#x7EF4;&#x62A4;&#x72B6;&#x6001;&#x548C;&#x66F4;&#x65B0;&#x89C6;&#x56FE;&#xFF1B;&#x800C;&#x66F4;&#x65B0;&#x89C6;&#x56FE;&#x548C;&#x7EF4;&#x62A4;&#x72B6;&#x6001;&#x90FD;&#x9700;&#x8981;DOM&#x64CD;&#x4F5C;&#x3002;&#x5176;&#x5B9E;&#x8FD1;&#x5E74;&#x6765;&#xFF0C;&#x524D;&#x7AEF;&#x7684;&#x6846;&#x67B6;&#x4E3B;&#x8981;&#x53D1;&#x5C55;&#x65B9;&#x5411;&#x5C31;&#x662F;&#x89E3;&#x653E;DOM&#x64CD;&#x4F5C;&#x7684;&#x590D;&#x6742;&#x6027;&#x3002;</p>
+<p>&#x5728;jQuery&#x51FA;&#x73B0;&#x4EE5;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x76F4;&#x63A5;&#x64CD;&#x4F5C;DOM&#x7ED3;&#x6784;&#xFF0C;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x590D;&#x6742;&#x5EA6;&#x9AD8;&#xFF0C;&#x517C;&#x5BB9;&#x6027;&#x4E5F;&#x8F83;&#x5DEE;&#xFF1B;&#x6709;&#x4E86;jQuery&#x5F3A;&#x5927;&#x7684;&#x9009;&#x62E9;&#x5668;&#x4EE5;&#x53CA;&#x9AD8;&#x5EA6;&#x5C01;&#x88C5;&#x7684;API&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x66F4;&#x65B9;&#x4FBF;&#x7684;&#x64CD;&#x4F5C;DOM&#xFF0C;jQuery&#x5E2E;&#x6211;&#x4EEC;&#x5904;&#x7406;&#x517C;&#x5BB9;&#x6027;&#x95EE;&#x9898;&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x4F7F;DOM&#x64CD;&#x4F5C;&#x53D8;&#x5F97;&#x7B80;&#x5355;&#xFF1B;&#x4F46;&#x662F;&#x806A;&#x660E;&#x7684;&#x7A0B;&#x5E8F;&#x5458;&#x4E0D;&#x53EF;&#x80FD;&#x6EE1;&#x8DB3;&#x4E8E;&#x6B64;&#xFF0C;&#x5404;&#x79CD;MVVM&#x6846;&#x67B6;&#x5E94;&#x8FD0;&#x800C;&#x751F;&#xFF0C;&#x6709;angularJS&#x3001;avalon&#x3001;vue.js&#x7B49;&#xFF0C;MVVM&#x4F7F;&#x7528;&#x6570;&#x636E;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#xFF0C;&#x4F7F;&#x5F97;&#x6211;&#x4EEC;&#x5B8C;&#x5168;&#x4E0D;&#x9700;&#x8981;&#x64CD;&#x4F5C;DOM&#x4E86;&#xFF0C;&#x66F4;&#x65B0;&#x4E86;&#x72B6;&#x6001;&#x89C6;&#x56FE;&#x4F1A;&#x81EA;&#x52A8;&#x66F4;&#x65B0;&#xFF0C;&#x66F4;&#x65B0;&#x4E86;&#x89C6;&#x56FE;&#x6570;&#x636E;&#x72B6;&#x6001;&#x4E5F;&#x4F1A;&#x81EA;&#x52A8;&#x66F4;&#x65B0;&#xFF0C;&#x53EF;&#x4EE5;&#x8BF4;MMVM&#x4F7F;&#x5F97;&#x524D;&#x7AEF;&#x7684;&#x5F00;&#x53D1;&#x6548;&#x7387;&#x5927;&#x5E45;&#x63D0;&#x5347;&#xFF0C;&#x4F46;&#x662F;&#x5176;&#x5927;&#x91CF;&#x7684;&#x4E8B;&#x4EF6;&#x7ED1;&#x5B9A;&#x4F7F;&#x5F97;&#x5176;&#x5728;&#x590D;&#x6742;&#x573A;&#x666F;&#x4E0B;&#x7684;&#x6267;&#x884C;&#x6027;&#x80FD;&#x582A;&#x5FE7;&#xFF1B;&#x6709;&#x6CA1;&#x6709;&#x4E00;&#x79CD;&#x517C;&#x987E;&#x5F00;&#x53D1;&#x6548;&#x7387;&#x548C;&#x6267;&#x884C;&#x6548;&#x7387;&#x7684;&#x65B9;&#x6848;&#x5462;&#xFF1F;ReactJS&#x5C31;&#x662F;&#x4E00;&#x79CD;&#x4E0D;&#x9519;&#x7684;&#x65B9;&#x6848;&#xFF0C;&#x867D;&#x7136;&#x5176;&#x5C06;JS&#x4EE3;&#x7801;&#x548C;HTML&#x4EE3;&#x7801;&#x6DF7;&#x5408;&#x5728;&#x4E00;&#x8D77;&#x7684;&#x8BBE;&#x8BA1;&#x6709;&#x4E0D;&#x5C11;&#x4E89;&#x8BAE;&#xFF0C;&#x4F46;&#x662F;&#x5176;&#x5F15;&#x5165;&#x7684;Virtual DOM(&#x865A;&#x62DF;DOM)&#x5374;&#x662F;&#x5F97;&#x5230;&#x5927;&#x5BB6;&#x7684;&#x4E00;&#x81F4;&#x8BA4;&#x540C;&#x7684;&#x3002;</p>
+<h3 id="2&#x7406;&#x89E3;&#x865A;&#x62DF;dom">2.&#x7406;&#x89E3;&#x865A;&#x62DF;DOM</h3>
+<p>&#x865A;&#x62DF;&#x7684;DOM&#x7684;&#x6838;&#x5FC3;&#x601D;&#x60F3;&#x662F;&#xFF1A;&#x5BF9;&#x590D;&#x6742;&#x7684;&#x6587;&#x6863;DOM&#x7ED3;&#x6784;&#xFF0C;&#x63D0;&#x4F9B;&#x4E00;&#x79CD;&#x65B9;&#x4FBF;&#x7684;&#x5DE5;&#x5177;&#xFF0C;&#x8FDB;&#x884C;&#x6700;&#x5C0F;&#x5316;&#x5730;DOM&#x64CD;&#x4F5C;&#x3002;&#x8FD9;&#x53E5;&#x8BDD;&#xFF0C;&#x4E5F;&#x8BB8;&#x8FC7;&#x4E8E;&#x62BD;&#x8C61;&#xFF0C;&#x5374;&#x57FA;&#x672C;&#x6982;&#x51B5;&#x4E86;&#x865A;&#x62DF;DOM&#x7684;&#x8BBE;&#x8BA1;&#x601D;&#x60F3;</p>
+<pre><code>(1) &#x63D0;&#x4F9B;&#x4E00;&#x79CD;&#x65B9;&#x4FBF;&#x7684;&#x5DE5;&#x5177;&#xFF0C;&#x4F7F;&#x5F97;&#x5F00;&#x53D1;&#x6548;&#x7387;&#x5F97;&#x5230;&#x4FDD;&#x8BC1;
+(2) &#x4FDD;&#x8BC1;&#x6700;&#x5C0F;&#x5316;&#x7684;DOM&#x64CD;&#x4F5C;&#xFF0C;&#x4F7F;&#x5F97;&#x6267;&#x884C;&#x6548;&#x7387;&#x5F97;&#x5230;&#x4FDD;&#x8BC1;
+</code></pre><h5 id="1&#x7528;js&#x8868;&#x793A;dom&#x7ED3;&#x6784;">(1).&#x7528;JS&#x8868;&#x793A;DOM&#x7ED3;&#x6784;</h5>
+<p>DOM&#x5F88;&#x6162;&#xFF0C;&#x800C;javascript&#x5F88;&#x5FEB;&#xFF0C;&#x7528;javascript&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x5F88;&#x5BB9;&#x6613;&#x5730;&#x8868;&#x793A;DOM&#x8282;&#x70B9;&#x3002;DOM&#x8282;&#x70B9;&#x5305;&#x62EC;&#x6807;&#x7B7E;&#x3001;&#x5C5E;&#x6027;&#x548C;&#x5B50;&#x8282;&#x70B9;&#xFF0C;&#x901A;&#x8FC7;VElement&#x8868;&#x793A;&#x5982;&#x4E0B;&#x3002;</p>
+<pre><code class="lang-javascript">
+<span class="hljs-comment">//&#x865A;&#x62DF;dom&#xFF0C;&#x53C2;&#x6570;&#x5206;&#x522B;&#x4E3A;&#x6807;&#x7B7E;&#x540D;&#x3001;&#x5C5E;&#x6027;&#x5BF9;&#x8C61;&#x3001;&#x5B50;DOM&#x5217;&#x8868;</span>
+<span class="hljs-keyword">var</span> VElement = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">tagName, props, children</span>) </span>{
+    <span class="hljs-comment">//&#x4FDD;&#x8BC1;&#x53EA;&#x80FD;&#x901A;&#x8FC7;&#x5982;&#x4E0B;&#x65B9;&#x5F0F;&#x8C03;&#x7528;&#xFF1A;new VElement</span>
+    <span class="hljs-keyword">if</span> (!(<span class="hljs-keyword">this</span> <span class="hljs-keyword">instanceof</span> VElement)) {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> VElement(tagName, props, children);
+    }
+
+    <span class="hljs-comment">//&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x53EA;&#x4F20;&#x9012;tagName&#x548C;children&#x53C2;&#x6570;</span>
+    <span class="hljs-keyword">if</span> (util.isArray(props)) {
+        children = props;
+        props = {};
+    }
+
+    <span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x865A;&#x62DF;dom&#x7684;&#x76F8;&#x5173;&#x5C5E;&#x6027;</span>
+    <span class="hljs-keyword">this</span>.tagName = tagName;
+    <span class="hljs-keyword">this</span>.props = props || {};
+    <span class="hljs-keyword">this</span>.children = children || [];
+    <span class="hljs-keyword">this</span>.key = props ? props.key : <span class="hljs-keyword">void</span> <span class="hljs-number">666</span>;
+    <span class="hljs-keyword">var</span> count = <span class="hljs-number">0</span>;
+    util.each(<span class="hljs-keyword">this</span>.children, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">child, i</span>) </span>{
+        <span class="hljs-keyword">if</span> (child <span class="hljs-keyword">instanceof</span> VElement) {
+            count += child.count;
+        } <span class="hljs-keyword">else</span> {
+            children[i] = <span class="hljs-string">&apos;&apos;</span> + child;
+        }
+        count++;
+    });
+    <span class="hljs-keyword">this</span>.count = count;
+}
+</code></pre>
+<p>&#x901A;&#x8FC7;VElement&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5F88;&#x7B80;&#x5355;&#x5730;&#x7528;javascript&#x8868;&#x793A;DOM&#x7ED3;&#x6784;&#x3002;&#x6BD4;&#x5982;</p>
+<pre><code class="lang-javascript">
+<span class="hljs-keyword">var</span> vdom = velement(<span class="hljs-string">&apos;div&apos;</span>, { <span class="hljs-string">&apos;id&apos;</span>: <span class="hljs-string">&apos;container&apos;</span> }, [
+    velement(<span class="hljs-string">&apos;h1&apos;</span>, { style: <span class="hljs-string">&apos;color:red&apos;</span> }, [<span class="hljs-string">&apos;simple virtual dom&apos;</span>]),
+    velement(<span class="hljs-string">&apos;p&apos;</span>, [<span class="hljs-string">&apos;hello world&apos;</span>]),
+    velement(<span class="hljs-string">&apos;ul&apos;</span>, [velement(<span class="hljs-string">&apos;li&apos;</span>, [<span class="hljs-string">&apos;item #1&apos;</span>]), velement(<span class="hljs-string">&apos;li&apos;</span>, [<span class="hljs-string">&apos;item #2&apos;</span>])]),
+]);
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x7684;javascript&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x8868;&#x793A;&#x5982;&#x4E0B;DOM&#x7ED3;&#x6784;&#xFF1A;</p>
+<pre><code class="lang-html">
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;color:red&quot;</span>&gt;</span>simple virtual dom<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>hello world<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>item #1<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>item #2<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>   
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>&#x540C;&#x6837;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5F88;&#x65B9;&#x4FBF;&#x5730;&#x6839;&#x636E;&#x865A;&#x62DF;DOM&#x6811;&#x6784;&#x5EFA;&#x51FA;&#x771F;&#x5B9E;&#x7684;DOM&#x6811;&#x3002;&#x5177;&#x4F53;&#x601D;&#x8DEF;&#xFF1A;&#x6839;&#x636E;&#x865A;&#x62DF;DOM&#x8282;&#x70B9;&#x7684;&#x5C5E;&#x6027;&#x548C;&#x5B50;&#x8282;&#x70B9;&#x9012;&#x5F52;&#x5730;&#x6784;&#x5EFA;&#x51FA;&#x771F;&#x5B9E;&#x7684;DOM&#x6811;&#x3002;&#x89C1;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-javascript">
+VElement.prototype.render = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-comment">//&#x521B;&#x5EFA;&#x6807;&#x7B7E;</span>
+    <span class="hljs-keyword">var</span> el = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-keyword">this</span>.tagName);
+    <span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x6807;&#x7B7E;&#x7684;&#x5C5E;&#x6027;</span>
+    <span class="hljs-keyword">var</span> props = <span class="hljs-keyword">this</span>.props;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> propName <span class="hljs-keyword">in</span> props) {
+        <span class="hljs-keyword">var</span> propValue = props[propName]
+        util.setAttr(el, propName, propValue);
+    }
+
+    <span class="hljs-comment">//&#x4F9D;&#x6B21;&#x521B;&#x5EFA;&#x5B50;&#x8282;&#x70B9;&#x7684;&#x6807;&#x7B7E;</span>
+    util.each(<span class="hljs-keyword">this</span>.children, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">child</span>) </span>{
+        <span class="hljs-comment">//&#x5982;&#x679C;&#x5B50;&#x8282;&#x70B9;&#x4ECD;&#x7136;&#x4E3A;velement&#xFF0C;&#x5219;&#x9012;&#x5F52;&#x7684;&#x521B;&#x5EFA;&#x5B50;&#x8282;&#x70B9;&#xFF0C;&#x5426;&#x5219;&#x76F4;&#x63A5;&#x521B;&#x5EFA;&#x6587;&#x672C;&#x7C7B;&#x578B;&#x8282;&#x70B9;</span>
+        <span class="hljs-keyword">var</span> childEl = (child <span class="hljs-keyword">instanceof</span> VElement) ? child.render() : <span class="hljs-built_in">document</span>.createTextNode(child);
+        el.appendChild(childEl);
+    });
+
+    <span class="hljs-keyword">return</span> el;
+}
+</code></pre>
+<p>&#x5BF9;&#x4E00;&#x4E2A;&#x865A;&#x62DF;&#x7684;DOM&#x5BF9;&#x8C61;VElement&#xFF0C;&#x8C03;&#x7528;&#x5176;&#x539F;&#x578B;&#x7684;render&#x65B9;&#x6CD5;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x4EA7;&#x751F;&#x4E00;&#x9897;&#x771F;&#x5B9E;&#x7684;DOM&#x6811;&#x3002;</p>
+<pre><code class="lang-javascript">
+vdom.render();
+</code></pre>
+<p>&#x65E2;&#x7136;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7528;JS&#x5BF9;&#x8C61;&#x8868;&#x793A;DOM&#x7ED3;&#x6784;&#xFF0C;&#x90A3;&#x4E48;&#x5F53;&#x6570;&#x636E;&#x72B6;&#x6001;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x800C;&#x9700;&#x8981;&#x6539;&#x53D8;DOM&#x7ED3;&#x6784;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x5148;&#x901A;&#x8FC7;JS&#x5BF9;&#x8C61;&#x8868;&#x793A;&#x7684;&#x865A;&#x62DF;DOM&#x8BA1;&#x7B97;&#x51FA;&#x5B9E;&#x9645;DOM&#x9700;&#x8981;&#x505A;&#x7684;&#x6700;&#x5C0F;&#x53D8;&#x52A8;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x64CD;&#x4F5C;&#x5B9E;&#x9645;DOM&#xFF0C;&#x4ECE;&#x800C;&#x907F;&#x514D;&#x4E86;&#x7C97;&#x653E;&#x5F0F;&#x7684;DOM&#x64CD;&#x4F5C;&#x5E26;&#x6765;&#x7684;&#x6027;&#x80FD;&#x95EE;&#x9898;&#x3002;</p>
+<h5 id="2&#x6BD4;&#x8F83;&#x4E24;&#x68F5;&#x865A;&#x62DF;dom&#x6811;&#x7684;&#x5DEE;&#x5F02;">(2).&#x6BD4;&#x8F83;&#x4E24;&#x68F5;&#x865A;&#x62DF;DOM&#x6811;&#x7684;&#x5DEE;&#x5F02;</h5>
+<p>&#x5728;&#x7528;JS&#x5BF9;&#x8C61;&#x8868;&#x793A;DOM&#x7ED3;&#x6784;&#x540E;&#xFF0C;&#x5F53;&#x9875;&#x9762;&#x72B6;&#x6001;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x800C;&#x9700;&#x8981;&#x64CD;&#x4F5C;DOM&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5148;&#x901A;&#x8FC7;&#x865A;&#x62DF;DOM&#x8BA1;&#x7B97;&#x51FA;&#x5BF9;&#x771F;&#x5B9E;DOM&#x7684;&#x6700;&#x5C0F;&#x4FEE;&#x6539;&#x91CF;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x4FEE;&#x6539;&#x771F;&#x5B9E;DOM&#x7ED3;&#x6784;(&#x56E0;&#x4E3A;&#x771F;&#x5B9E;DOM&#x7684;&#x64CD;&#x4F5C;&#x4EE3;&#x4EF7;&#x592A;&#x5927;)&#x3002;</p>
+<p>&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF0C;&#x4E24;&#x4E2A;&#x865A;&#x62DF;DOM&#x4E4B;&#x95F4;&#x7684;&#x5DEE;&#x5F02;&#x5DF2;&#x7ECF;&#x6807;&#x7EA2;&#xFF1A;</p>
+<p><img src="../images/vdom-diff.png" alt=""></p>
+<p>&#x4E3A;&#x4E86;&#x4FBF;&#x4E8E;&#x8BF4;&#x660E;&#x95EE;&#x9898;&#xFF0C;&#x6211;&#x5F53;&#x7136;&#x9009;&#x53D6;&#x4E86;&#x6700;&#x7B80;&#x5355;&#x7684;DOM&#x7ED3;&#x6784;&#xFF0C;&#x4E24;&#x4E2A;&#x7B80;&#x5355;DOM&#x4E4B;&#x95F4;&#x7684;&#x5DEE;&#x5F02;&#x4F3C;&#x4E4E;&#x662F;&#x663E;&#x800C;&#x6613;&#x89C1;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x771F;&#x5B9E;&#x573A;&#x666F;&#x4E0B;&#x7684;DOM&#x7ED3;&#x6784;&#x5F88;&#x590D;&#x6742;&#xFF0C;&#x6211;&#x4EEC;&#x5FC5;&#x987B;&#x501F;&#x52A9;&#x4E8E;&#x4E00;&#x4E2A;&#x6709;&#x6548;&#x7684;DOM&#x6811;&#x6BD4;&#x8F83;&#x7B97;&#x6CD5;&#x3002;</p>
+<p>&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;diff&#x7B97;&#x6CD5;&#x6709;&#x4E24;&#x4E2A;&#x8981;&#x70B9;&#xFF1A;</p>
+<pre><code>
+&#x5982;&#x4F55;&#x6BD4;&#x8F83;&#x4E24;&#x4E2A;&#x4E24;&#x68F5;DOM&#x6811;
+&#x5982;&#x4F55;&#x8BB0;&#x5F55;&#x8282;&#x70B9;&#x4E4B;&#x95F4;&#x7684;&#x5DEE;&#x5F02;
+</code></pre><p><1> &#x5982;&#x4F55;&#x6BD4;&#x8F83;&#x4E24;&#x4E2A;&#x4E24;&#x68F5;DOM&#x6811;</1></p>
+<p>&#x8BA1;&#x7B97;&#x4E24;&#x68F5;&#x6811;&#x4E4B;&#x95F4;&#x5DEE;&#x5F02;&#x7684;&#x5E38;&#x89C4;&#x7B97;&#x6CD5;&#x590D;&#x6742;&#x5EA6;&#x4E3A;O(n3)&#xFF0C;&#x4E00;&#x4E2A;&#x6587;&#x6863;&#x7684;DOM&#x7ED3;&#x6784;&#x6709;&#x4E0A;&#x767E;&#x4E2A;&#x8282;&#x70B9;&#x662F;&#x5F88;&#x6B63;&#x5E38;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x8FD9;&#x79CD;&#x590D;&#x6742;&#x5EA6;&#x65E0;&#x6CD5;&#x5E94;&#x7528;&#x4E8E;&#x5B9E;&#x9645;&#x9879;&#x76EE;&#x3002;&#x9488;&#x5BF9;&#x524D;&#x7AEF;&#x7684;&#x5177;&#x4F53;&#x60C5;&#x51B5;&#xFF1A;&#x6211;&#x4EEC;&#x5F88;&#x5C11;&#x8DE8;&#x7EA7;&#x522B;&#x7684;&#x4FEE;&#x6539;DOM&#x8282;&#x70B9;&#xFF0C;&#x901A;&#x5E38;&#x662F;&#x4FEE;&#x6539;&#x8282;&#x70B9;&#x7684;&#x5C5E;&#x6027;&#x3001;&#x8C03;&#x6574;&#x5B50;&#x8282;&#x70B9;&#x7684;&#x987A;&#x5E8F;&#x3001;&#x6DFB;&#x52A0;&#x5B50;&#x8282;&#x70B9;&#x7B49;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x5BF9;&#x540C;&#x7EA7;&#x522B;&#x8282;&#x70B9;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#xFF0C;&#x907F;&#x514D;&#x4E86;diff&#x7B97;&#x6CD5;&#x7684;&#x590D;&#x6742;&#x6027;&#x3002;&#x5BF9;&#x540C;&#x7EA7;&#x522B;&#x8282;&#x70B9;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#x7684;&#x5E38;&#x7528;&#x65B9;&#x6CD5;&#x662F;&#x6DF1;&#x5EA6;&#x4F18;&#x5148;&#x904D;&#x5386;&#xFF1A;</p>
+<pre><code class="lang-javascript">
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">diff</span>(<span class="hljs-params">oldTree, newTree</span>) </span>{
+    <span class="hljs-comment">//&#x8282;&#x70B9;&#x7684;&#x904D;&#x5386;&#x987A;&#x5E8F;</span>
+    <span class="hljs-keyword">var</span> index = <span class="hljs-number">0</span>; 
+    <span class="hljs-comment">//&#x5728;&#x904D;&#x5386;&#x8FC7;&#x7A0B;&#x4E2D;&#x8BB0;&#x5F55;&#x8282;&#x70B9;&#x7684;&#x5DEE;&#x5F02;</span>
+    <span class="hljs-keyword">var</span> patches = {}; 
+    <span class="hljs-comment">//&#x6DF1;&#x5EA6;&#x4F18;&#x5148;&#x904D;&#x5386;&#x4E24;&#x68F5;&#x6811;</span>
+    dfsWalk(oldTree, newTree, index, patches); 
+    <span class="hljs-keyword">return</span> patches; 
+}
+</code></pre>
+<p><2>&#x5982;&#x4F55;&#x8BB0;&#x5F55;&#x8282;&#x70B9;&#x4E4B;&#x95F4;&#x7684;&#x5DEE;&#x5F02;</2></p>
+<p>&#x7531;&#x4E8E;&#x6211;&#x4EEC;&#x5BF9;DOM&#x6811;&#x91C7;&#x53D6;&#x7684;&#x662F;&#x540C;&#x7EA7;&#x6BD4;&#x8F83;&#xFF0C;&#x56E0;&#x6B64;&#x8282;&#x70B9;&#x4E4B;&#x95F4;&#x7684;&#x5DEE;&#x5F02;&#x53EF;&#x4EE5;&#x5F52;&#x7ED3;&#x4E3A;4&#x79CD;&#x7C7B;&#x578B;&#xFF1A;</p>
+<pre><code>&#x4FEE;&#x6539;&#x8282;&#x70B9;&#x5C5E;&#x6027;, &#x7528;PROPS&#x8868;&#x793A;
+&#x4FEE;&#x6539;&#x8282;&#x70B9;&#x6587;&#x672C;&#x5185;&#x5BB9;, &#x7528;TEXT&#x8868;&#x793A;
+&#x66FF;&#x6362;&#x539F;&#x6709;&#x8282;&#x70B9;, &#x7528;REPLACE&#x8868;&#x793A;
+&#x8C03;&#x6574;&#x5B50;&#x8282;&#x70B9;&#xFF0C;&#x5305;&#x62EC;&#x79FB;&#x52A8;&#x3001;&#x5220;&#x9664;&#x7B49;&#xFF0C;&#x7528;REORDER&#x8868;&#x793A;
+</code></pre><p>&#x5BF9;&#x4E8E;&#x8282;&#x70B9;&#x4E4B;&#x95F4;&#x7684;&#x5DEE;&#x5F02;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5F88;&#x65B9;&#x4FBF;&#x5730;&#x4F7F;&#x7528;&#x4E0A;&#x8FF0;&#x56DB;&#x79CD;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x8BB0;&#x5F55;&#xFF0C;&#x6BD4;&#x5982;&#x5F53;&#x65E7;&#x8282;&#x70B9;&#x88AB;&#x66FF;&#x6362;&#x65F6;&#xFF1A;</p>
+<pre><code class="lang-javascript">
+{type:REPLACE,node:newNode}
+</code></pre>
+<p>&#x800C;&#x5F53;&#x65E7;&#x8282;&#x70B9;&#x7684;&#x5C5E;&#x6027;&#x88AB;&#x4FEE;&#x6539;&#x65F6;&#xFF1A;</p>
+<pre><code class="lang-javascript">
+{type:PROPS,props: newProps}
+</code></pre>
+<p>&#x5728;&#x6DF1;&#x5EA6;&#x4F18;&#x5148;&#x904D;&#x5386;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x7F16;&#x53F7;&#xFF0C;&#x5982;&#x679C;&#x5BF9;&#x5E94;&#x7684;&#x8282;&#x70B9;&#x6709;&#x53D8;&#x5316;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x628A;&#x76F8;&#x5E94;&#x53D8;&#x5316;&#x7684;&#x7C7B;&#x522B;&#x8BB0;&#x5F55;&#x4E0B;&#x6765;&#x5373;&#x53EF;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre><code class="lang-javascript">
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">dfsWalk</span>(<span class="hljs-params">oldNode, newNode, index, patches</span>) </span>{
+    <span class="hljs-keyword">var</span> currentPatch = [];
+    <span class="hljs-keyword">if</span> (newNode === <span class="hljs-literal">null</span>) {
+        <span class="hljs-comment">//&#x4F9D;&#x8D56;listdiff&#x7B97;&#x6CD5;&#x8FDB;&#x884C;&#x6807;&#x8BB0;&#x4E3A;&#x5220;&#x9664;</span>
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (util.isString(oldNode) &amp;&amp; util.isString(newNode)) {
+        <span class="hljs-keyword">if</span> (oldNode !== newNode) {
+            <span class="hljs-comment">//&#x5982;&#x679C;&#x662F;&#x6587;&#x672C;&#x8282;&#x70B9;&#x5219;&#x76F4;&#x63A5;&#x66FF;&#x6362;&#x6587;&#x672C;</span>
+            currentPatch.push({
+                type: patch.TEXT,
+                content: newNode
+            });
+        }
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (oldNode.tagName === newNode.tagName &amp;&amp; oldNode.key === newNode.key) {
+        <span class="hljs-comment">//&#x8282;&#x70B9;&#x7C7B;&#x578B;&#x76F8;&#x540C;</span>
+        <span class="hljs-comment">//&#x6BD4;&#x8F83;&#x8282;&#x70B9;&#x7684;&#x5C5E;&#x6027;&#x662F;&#x5426;&#x76F8;&#x540C;</span>
+        <span class="hljs-keyword">var</span> propsPatches = diffProps(oldNode, newNode);
+        <span class="hljs-keyword">if</span> (propsPatches) {
+            currentPatch.push({
+                type: patch.PROPS,
+                props: propsPatches
+            });
+        }
+        <span class="hljs-comment">//&#x6BD4;&#x8F83;&#x5B50;&#x8282;&#x70B9;&#x662F;&#x5426;&#x76F8;&#x540C;</span>
+        diffChildren(oldNode.children, newNode.children, index, patches, currentPatch);
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-comment">//&#x8282;&#x70B9;&#x7684;&#x7C7B;&#x578B;&#x4E0D;&#x540C;&#xFF0C;&#x76F4;&#x63A5;&#x66FF;&#x6362;</span>
+        currentPatch.push({ type: patch.REPLACE, node: newNode });
+    }
+
+    <span class="hljs-keyword">if</span> (currentPatch.length) {
+        patches[index] = currentPatch;
+    }
+}
+</code></pre>
+<p>&#x6BD4;&#x5982;&#x5BF9;&#x4E0A;&#x6587;&#x56FE;&#x4E2D;&#x7684;&#x4E24;&#x9897;&#x865A;&#x62DF;DOM&#x6811;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x5982;&#x4E0B;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x8BB0;&#x5F55;&#x5B83;&#x4EEC;&#x4E4B;&#x95F4;&#x7684;&#x53D8;&#x5316;&#xFF1A;</p>
+<pre><code class="lang-javascript">
+<span class="hljs-keyword">var</span> patches = {
+    <span class="hljs-number">1</span>:{type:REPLACE,node:newNode}, <span class="hljs-comment">//h1&#x8282;&#x70B9;&#x53D8;&#x6210;h5</span>
+    <span class="hljs-number">5</span>:{type:REORDER,moves:changObj} <span class="hljs-comment">//ul&#x65B0;&#x589E;&#x4E86;&#x5B50;&#x8282;&#x70B9;li</span>
+}
+</code></pre>
+<h5 id="3&#x5BF9;&#x771F;&#x5B9E;dom&#x8FDB;&#x884C;&#x6700;&#x5C0F;&#x5316;&#x4FEE;&#x6539;">(3).&#x5BF9;&#x771F;&#x5B9E;DOM&#x8FDB;&#x884C;&#x6700;&#x5C0F;&#x5316;&#x4FEE;&#x6539;</h5>
+<p>&#x901A;&#x8FC7;&#x865A;&#x62DF;DOM&#x8BA1;&#x7B97;&#x51FA;&#x4E24;&#x9897;&#x771F;&#x5B9E;DOM&#x6811;&#x4E4B;&#x95F4;&#x7684;&#x5DEE;&#x5F02;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x771F;&#x5B9E;&#x7684;DOM&#x7ED3;&#x6784;&#x4E86;&#x3002;&#x4E0A;&#x6587;&#x6DF1;&#x5EA6;&#x4F18;&#x5148;&#x904D;&#x5386;&#x8FC7;&#x7A0B;&#x4EA7;&#x751F;&#x4E86;&#x7528;&#x4E8E;&#x8BB0;&#x5F55;&#x4E24;&#x68F5;&#x6811;&#x4E4B;&#x95F4;&#x5DEE;&#x5F02;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;patches, &#x901A;&#x8FC7;&#x4F7F;&#x7528;patches&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x5BF9;&#x771F;&#x5B9E;DOM&#x505A;&#x6700;&#x5C0F;&#x5316;&#x7684;&#x4FEE;&#x6539;&#x3002;</p>
+<pre><code class="lang-javascript">
+<span class="hljs-comment">//&#x5C06;&#x5DEE;&#x5F02;&#x5E94;&#x7528;&#x5230;&#x771F;&#x5B9E;DOM</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">applyPatches</span>(<span class="hljs-params">node, currentPatches</span>) </span>{
+    util.each(currentPatches, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">currentPatch</span>) </span>{
+        <span class="hljs-keyword">switch</span> (currentPatch.type) {
+            <span class="hljs-comment">//&#x5F53;&#x4FEE;&#x6539;&#x7C7B;&#x578B;&#x4E3A;REPLACE&#x65F6;</span>
+            <span class="hljs-keyword">case</span> REPLACE:
+                <span class="hljs-keyword">var</span> newNode = (<span class="hljs-keyword">typeof</span> currentPatch.node === <span class="hljs-string">&apos;String&apos;</span>)
+                 ? <span class="hljs-built_in">document</span>.createTextNode(currentPatch.node) 
+                 : currentPatch.node.render();
+                node.parentNode.replaceChild(newNode, node);
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-comment">//&#x5F53;&#x4FEE;&#x6539;&#x7C7B;&#x578B;&#x4E3A;REORDER&#x65F6;</span>
+            <span class="hljs-keyword">case</span> REORDER:
+                reoderChildren(node, currentPatch.moves);
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-comment">//&#x5F53;&#x4FEE;&#x6539;&#x7C7B;&#x578B;&#x4E3A;PROPS&#x65F6;</span>
+            <span class="hljs-keyword">case</span> PROPS:
+                setProps(node, currentPatch.props);
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-comment">//&#x5F53;&#x4FEE;&#x6539;&#x7C7B;&#x578B;&#x4E3A;TEXT&#x65F6;</span>
+            <span class="hljs-keyword">case</span> TEXT:
+                <span class="hljs-keyword">if</span> (node.textContent) {
+                    node.textContent = currentPatch.content;
+                } <span class="hljs-keyword">else</span> {
+                    node.nodeValue = currentPatch.content;
+                }
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">default</span>:
+                <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&apos;Unknow patch type &apos;</span> + currentPatch.type);
+        }
+    });
+}
+</code></pre>
+<p>&#x81F3;&#x6B64;&#xFF0C;&#x865A;&#x62DF;DOM&#x7684;&#x57FA;&#x672C;&#x539F;&#x7406;&#x5DF2;&#x7ECF;&#x57FA;&#x672C;&#x8BB2;&#x89E3;&#x5B8C;&#x6210;&#x4E86;&#xFF1B;&#x6211;&#x4EEC;&#x4E5F;&#x4E00;&#x8D77;&#x5B9E;&#x73B0;&#x4E86;&#x4E00;&#x4E2A;&#x57FA;&#x672C;&#x53EF;&#x7528;&#x7684;&#x865A;&#x62DF;DOM&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="0.0.2.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 亿.0.2 MVVM原理">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"亿.0.3 实现虚拟DOM","level":"8.4","depth":1,"previous":{"title":"亿.0.2 MVVM原理","level":"8.3","depth":1,"path":"senior/0.0.2.md","ref":"senior/0.0.2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro"],"root":"workspace","styles":{"website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"coffee1949","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"前端笔记","language":"zh-hans","links":{"sidebar":{"知乎":"https://www.zhihu.com/people/codeing.cn/posts"}},"gitbook":"*","description":"前端笔记(front-end-notes)"},"file":{"path":"senior/0.0.3.md","mtime":"2022-02-25T09:27:03.753Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-25T09:38:33.140Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
