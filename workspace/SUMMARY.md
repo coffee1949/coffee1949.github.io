@@ -25,7 +25,7 @@
 ### 千、vite
 
 * [千.0.0 vite介绍](vite/0.0.0.md)
-* [千.0.1 vite基础](vite/0.0.1.md)
+* [千.0.1 使用vite创建vue3+ts项目](vite/0.0.1.md)
 * [千.0.2 vue2中使用vite](vite/0.0.2.md)
 
 ### 萬、xxxxx
