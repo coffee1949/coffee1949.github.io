@@ -498,6 +498,36 @@ yarn add sass -D
 <pre><code class="lang-javascript">
 yarn add axios
 </code></pre>
+<h5 id="&#x4F7F;&#x7528;&#x4EE3;&#x66FF;src">&#x4F7F;&#x7528;<code>@</code>&#x4EE3;&#x66FF;<code>src</code></h5>
+<p>1&#xFF0C;&#x5728;<code>vite.config.js</code>&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x589E;&#x52A0;<code>resolve.alias</code>&#x914D;&#x7F6E;&#xFF0C;&#x5982;&#x4E0B;</p>
+<pre><code class="lang-javascript">
+<span class="hljs-keyword">import</span> { defineConfig } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;vite&quot;</span>;
+<span class="hljs-keyword">import</span> vue <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@vitejs/plugin-vue&quot;</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> defineConfig({
+  plugins: [vue()],
+
+  <span class="hljs-comment">// &#x589E;&#x52A0;resolve.alias&#x914D;&#x7F6E;</span>
+  <span class="hljs-comment">// &#x6B64;&#x64CD;&#x4F5C;&#x540E;&#x6709;&#xFF0C;&#x9879;&#x76EE;&#x5DF2;&#x7ECF;&#x652F;&#x6301;&#x4E86;&#xFF0C;&#x4F46;&#x662F;ts&#x4F9D;&#x7136;&#x4F1A;&#x98D8;&#x7EA2;&#xFF0C;&#x5904;&#x7406;&#x65B9;&#x6CD5;&#x5728;&#x4E0B;&#x9762;</span>
+  resolve: {
+    alias: {
+      <span class="hljs-string">&quot;@&quot;</span>: <span class="hljs-string">&quot;/src&quot;</span>,
+    },
+  },
+});
+</code></pre>
+<p>2&#xFF0C;&#x5904;&#x7406;<code>ts</code>&#x98D8;&#x7EA2;&#xFF1A;&#x4FEE;&#x6539;&#x9879;&#x76EE;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x7684;<code>tsconfig.json</code>&#x6587;&#x4EF6;&#xFF0C;&#x589E;&#x52A0;<code>compilerOptions.baseUrl</code>&#x548C;<code>compilerOptions.paths</code>&#x914D;&#x7F6E;&#x5B57;&#x6BB5;</p>
+<pre><code class="lang-javascript">{
+    compilerOptions: {
+
+        <span class="hljs-string">&quot;baseUrl&quot;</span>: <span class="hljs-string">&quot;./&quot;</span>,
+
+        <span class="hljs-string">&quot;paths&quot;</span>: {
+            <span class="hljs-string">&quot;@/*&quot;</span>: [<span class="hljs-string">&quot;src/*&quot;</span>]
+        }
+    }
+}
+</code></pre>
 
                                 
                                 </section>
@@ -541,7 +571,7 @@ yarn add axios
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"千.0.1 使用vite创建vue3+ts项目","level":"6.2","depth":1,"next":{"title":"千.0.2 vue2中使用vite","level":"6.3","depth":1,"path":"vite/0.0.2.md","ref":"vite/0.0.2.md","articles":[]},"previous":{"title":"千.0.0 vite介绍","level":"6.1","depth":1,"path":"vite/0.0.0.md","ref":"vite/0.0.0.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro"],"root":"workspace","styles":{"website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"coffee1949","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"前端笔记","language":"zh-hans","links":{"sidebar":{"知乎":"https://www.zhihu.com/people/codeing.cn/posts"}},"gitbook":"*","description":"前端笔记(front-end-notes)"},"file":{"path":"vite/0.0.1.md","mtime":"2022-02-26T02:55:58.969Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-26T02:57:55.515Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"千.0.1 使用vite创建vue3+ts项目","level":"6.2","depth":1,"next":{"title":"千.0.2 vue2中使用vite","level":"6.3","depth":1,"path":"vite/0.0.2.md","ref":"vite/0.0.2.md","articles":[]},"previous":{"title":"千.0.0 vite介绍","level":"6.1","depth":1,"path":"vite/0.0.0.md","ref":"vite/0.0.0.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro"],"root":"workspace","styles":{"website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"coffee1949","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"前端笔记","language":"zh-hans","links":{"sidebar":{"知乎":"https://www.zhihu.com/people/codeing.cn/posts"}},"gitbook":"*","description":"前端笔记(front-end-notes)"},"file":{"path":"vite/0.0.1.md","mtime":"2022-02-26T03:25:56.522Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-26T03:26:18.565Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
