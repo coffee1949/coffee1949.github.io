@@ -7,7 +7,11 @@
 * [零.0.0 从零开始使用gitbook搭建文档站点](gitbook/0.0.0.md)
 * [零.0.1 gitbook插件集合](gitbook/0.0.1.md)
 
-### 壹、JAVASCRIPT && ECMASCRIPT
+### 壹、VS-CODE
+
+* [零.0.0 前端必装插件](vscode/0.0.0.md)
+
+### 伍、JAVASCRIPT && ECMASCRIPT
 
 ### 拾、GLOB
 

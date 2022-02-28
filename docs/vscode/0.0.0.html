@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>佰.0.2 rollup打包格式 · 前端笔记</title>
+        <title>零.0.0 前端必装插件 · 前端笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -49,10 +49,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="0.0.3.html" />
+    <link rel="next" href="../glob/0.0.0.html" />
     
     
-    <link rel="prev" href="0.0.1.html" />
+    <link rel="prev" href="../gitbook/0.0.1.html" />
     
 
     </head>
@@ -143,9 +143,9 @@
         
         
     
-        <li class="chapter " data-level="3.1" data-path="../vscode/0.0.0.html">
+        <li class="chapter active" data-level="3.1" data-path="0.0.0.html">
             
-                <a href="../vscode/0.0.0.html">
+                <a href="0.0.0.html">
             
                     
                     零.0.0 前端必装插件
@@ -203,9 +203,9 @@
         
         
     
-        <li class="chapter " data-level="6.1" data-path="0.0.0.html">
+        <li class="chapter " data-level="6.1" data-path="../rollup/0.0.0.html">
             
-                <a href="0.0.0.html">
+                <a href="../rollup/0.0.0.html">
             
                     
                     佰.0.0 rollup介绍
@@ -216,9 +216,9 @@
             
         </li>
     
-        <li class="chapter " data-level="6.2" data-path="0.0.1.html">
+        <li class="chapter " data-level="6.2" data-path="../rollup/0.0.1.html">
             
-                <a href="0.0.1.html">
+                <a href="../rollup/0.0.1.html">
             
                     
                     佰.0.1 rollup基础
@@ -229,9 +229,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="6.3" data-path="0.0.2.html">
+        <li class="chapter " data-level="6.3" data-path="../rollup/0.0.2.html">
             
-                <a href="0.0.2.html">
+                <a href="../rollup/0.0.2.html">
             
                     
                     佰.0.2 rollup打包格式
@@ -242,9 +242,9 @@
             
         </li>
     
-        <li class="chapter " data-level="6.4" data-path="0.0.3.html">
+        <li class="chapter " data-level="6.4" data-path="../rollup/0.0.3.html">
             
-                <a href="0.0.3.html">
+                <a href="../rollup/0.0.3.html">
             
                     
                     佰.0.3 rollup插件及使用
@@ -255,9 +255,9 @@
             
         </li>
     
-        <li class="chapter " data-level="6.5" data-path="0.0.4.html">
+        <li class="chapter " data-level="6.5" data-path="../rollup/0.0.4.html">
             
-                <a href="0.0.4.html">
+                <a href="../rollup/0.0.4.html">
             
                     
                     佰.0.4 rollup配置文件内容
@@ -410,7 +410,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >佰.0.2 rollup打包格式</a>
+        <a href=".." >零.0.0 前端必装插件</a>
     </h1>
 </div>
 
@@ -425,22 +425,36 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="rollup&#x6253;&#x5305;&#x683C;&#x5F0F;"><code>rollup</code>&#x6253;&#x5305;&#x683C;&#x5F0F;</h1>
-<ul>
-<li>&#x6587;&#x6863;&#xFF1A;<a href="https://www.rollupjs.com/guide/big-list-of-options#%E6%A0%BC%E5%BC%8Fformat--f--outputformat" target="_blank">https://www.rollupjs.com/guide/big-list-of-options#%E6%A0%BC%E5%BC%8Fformat--f--outputformat</a></li>
-</ul>
-<h5 id="amd">AMD</h5>
-<p><code>Asynchronous Module Definition</code>&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x4F5C;<code>CJS</code>&#x7684;&#x5F02;&#x6B65;&#x7248;&#x672C;&#xFF0C;&#x5236;&#x5B9A;&#x4E86;&#x4E00;&#x5957;&#x89C4;&#x5219;&#x4F7F;&#x6A21;&#x5757;&#x53EF;&#x4EE5;&#x88AB;&#x5F02;&#x6B65;<code>require</code>&#x8FDB;&#x6765;&#x5E76;&#x5728;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x91CC;&#x7EE7;&#x7EED;&#x4F7F;&#x7528;&#xFF0C;&#x7136;&#x540E;<code>require.js</code>&#x7B49;&#x524D;&#x7AEF;&#x5E93;&#x4E5F;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x8FD9;&#x4E2A;&#x89C4;&#x5219;&#x52A0;&#x8F7D;&#x4EE3;&#x7801;&#x4E86;&#xFF0C;&#x76EE;&#x524D;&#x5DF2;&#x7ECF;&#x662F;&#x65F6;&#x4EE3;&#x7684;&#x773C;&#x6CEA;&#x4E86;&#x3002;</p>
-<h5 id="cjs">CJS</h5>
-<p><code>CommonJS</code>&#xFF0C;&#x53EA;&#x80FD;&#x5728;<code>NodeJS</code>&#x4E0A;&#x8FD0;&#x884C;&#xFF0C;&#x4F7F;&#x7528;<code>require(&quot;module&quot;)</code>&#x8BFB;&#x53D6;&#x5E76;&#x52A0;&#x8F7D;&#x6A21;&#x5757;&#x3002;</p>
-<p>&#x7F3A;&#x70B9;&#xFF1A;&#x4E0D;&#x652F;&#x6301;&#x6D4F;&#x89C8;&#x5668;&#xFF0C;&#x6267;&#x884C;&#x540E;&#x624D;&#x80FD;&#x62FF;&#x5230;&#x4F9D;&#x8D56;&#x4FE1;&#x606F;&#xFF0C;&#x7531;&#x4E8E;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x52A8;&#x6001;<code>require</code>&#xFF08;&#x4F8B;&#x5982;<code>react</code>&#x6839;&#x636E;&#x5F00;&#x53D1;&#x548C;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x5BFC;&#x51FA;&#x4E0D;&#x540C;&#x4EE3;&#x7801;&#x7684;&#x5199;&#x6CD5;&#xFF09;&#xFF0C;&#x65E0;&#x6CD5;&#x505A;&#x5230;&#x63D0;&#x524D;&#x5206;&#x6790;&#x4F9D;&#x8D56;&#x4EE5;&#x53CA;<code>Tree-Shaking</code>&#x3002;</p>
-<h5 id="umd">UMD</h5>
-<p><code>Universal Module Definition</code>&#xFF0C;&#x540C;&#x65F6;&#x517C;&#x5BB9;<code>CJS</code>&#x548C;<code>AMD</code>&#xFF0C;&#x5E76;&#x4E14;&#x652F;&#x6301;&#x76F4;&#x63A5;&#x5728;&#x524D;&#x7AEF;&#x7528;<code>&lt;script src=&quot;lib.umd.js&quot;&gt;&lt;/script&gt;</code>&#x7684;&#x65B9;&#x5F0F;&#x52A0;&#x8F7D;&#x3002;&#x73B0;&#x5728;&#x8FD8;&#x5728;&#x5E7F;&#x6CDB;&#x4F7F;&#x7528;&#xFF0C;&#x4E0D;&#x8FC7;&#x53EF;&#x4EE5;&#x60F3;&#x8C61;<code>ESM</code>&#x548C;<code>IIFE</code>&#x9010;&#x6E10;&#x4EE3;&#x66FF;&#x5B83;&#x3002;</p>
-<h5 id="esm">ESM</h5>
-<p><code>ECMAScript Module</code>&#xFF0C;&#x73B0;&#x5728;&#x4F7F;&#x7528;&#x7684;&#x6A21;&#x5757;&#x65B9;&#x6848;&#xFF0C;&#x4F7F;&#x7528;<code>import export</code>&#x6765;&#x7BA1;&#x7406;&#x4F9D;&#x8D56;&#x3002;&#x7531;&#x4E8E;&#x5B83;&#x4EEC;&#x53EA;&#x80FD;&#x5199;&#x5728;&#x6240;&#x6709;&#x8868;&#x8FBE;&#x5F0F;&#x5916;&#x9762;&#xFF0C;&#x6240;&#x4EE5;&#x6253;&#x5305;&#x5668;&#x53EF;&#x4EE5;&#x8F7B;&#x6613;&#x505A;&#x5230;&#x5206;&#x6790;&#x4F9D;&#x8D56;&#x4EE5;&#x53CA;<code>Tree-Shaking</code>&#x3002;&#x5F53;&#x7136;&#x4ED6;&#x4E5F;&#x652F;&#x6301;&#x52A8;&#x6001;&#x52A0;&#x8F7D;<code>import()</code>&#x3002;</p>
-<p>&#x6D4F;&#x89C8;&#x5668;&#x76F4;&#x63A5;&#x901A;&#x8FC7;<code>&lt;script type=&quot;module&quot;&gt;</code>&#x5373;&#x53EF;&#x4F7F;&#x7528;&#x8BE5;&#x5199;&#x6CD5;&#x3002;<code>NodeJS</code>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4F7F;&#x7528;<code>mjs</code>&#x540E;&#x7F00;&#x6216;&#x8005;&#x5728;<code>package.json</code>&#x6DFB;&#x52A0;<code>&quot;type&quot;: &quot;module&quot;</code>&#x6765;&#x4F7F;&#x7528;&#xFF0C;&#x6CE8;&#x610F;&#x4ED6;&#x8FD8;&#x6709;&#x4E00;&#x4E9B;<code>&#x5B9E;&#x9A8C;&#x6027;&#x7684;&#x529F;&#x80FD;</code>&#x6CA1;&#x6709;&#x6B63;&#x5F0F;&#x5F00;&#x542F;&#x3002;&#x8003;&#x8651;&#x5230;&#x5927;&#x91CF;<code>cjs</code>&#x5E93;&#x6CA1;&#x6709;&#x652F;&#x6301;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x53D1;&#x5E03;<code>esm</code>&#x7248;&#x7684;&#x5E93;&#x8FD8;&#x662F;&#x901A;&#x8FC7;<code>rollup</code>&#x6253;&#x5305;&#x4E00;&#x4E0B;&#x6BD4;&#x8F83;&#x597D;&#xFF08;&#x540C;&#x65F6;&#x76F8;&#x5173;&#x4F9D;&#x8D56;&#x53EF;&#x4EE5;&#x653E;&#x5230;<code>devDependencies</code>&#x91CC;&#xFF09;&#x3002;</p>
-<h5 id="iife">IIFE</h5>
-<p><code>Immediately Invoked Function Expression</code>&#xFF0C;&#x53EA;&#x662F;&#x4E00;&#x79CD;&#x5199;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x9690;&#x85CF;&#x4E00;&#x4E9B;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#xFF0C;&#x524D;&#x7AEF;&#x4EBA;&#x8981;&#x662F;&#x4E0D;&#x61C2;&#x8FD9;&#x4E2A;&#x53EF;&#x80FD;&#x5B66;&#x7684;&#x662F;&#x5047;&#x524D;&#x7AEF;&#x3002;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x4EE3;&#x66FF;<code>UMD</code>&#x4F5C;&#x4E3A;&#x7EAF;&#x7CB9;&#x7ED9;&#x524D;&#x7AEF;&#x4F7F;&#x7528;&#x7684;&#x5199;&#x6CD5;&#x3002;</p>
+                                <h1 id="&#x524D;&#x7AEF;&#x5FC5;&#x88C5;&#x63D2;&#x4EF6;">&#x524D;&#x7AEF;&#x5FC5;&#x88C5;&#x63D2;&#x4EF6;</h1>
+<pre><code class="lang-javascript">
+chinese language pack <span class="hljs-keyword">for</span> ...
+
+debugger <span class="hljs-keyword">for</span> chrome
+
+auto close tag
+
+auto rename tag
+
+live server <span class="hljs-comment">// &#x542F;&#x52A8;&#x672C;&#x5730;&#x670D;&#x52A1;</span>
+
+open <span class="hljs-keyword">in</span> browser
+
+power mode <span class="hljs-comment">// &#x7F16;&#x7801;&#x5149;&#x6807;&#x663E;&#x793A;&#x7279;&#x6548;</span>
+
+svg preview <span class="hljs-comment">// svg&#x9884;&#x89C8;</span>
+
+prettier - code formatter
+
+vetur <span class="hljs-comment">// vue2&#x5F00;&#x53D1;&#x5FC5;&#x88C5;</span>
+
+volar <span class="hljs-comment">// vue3&#x5F00;&#x53D1;&#x5FC5;&#x88C5;</span>
+
+vscode-icons <span class="hljs-comment">// vscode&#x6587;&#x4EF6;&amp;&#x6587;&#x4EF6;&#x5939;&#x56FE;&#x6807;</span>
+
+eslint
+
+git graph <span class="hljs-comment">// git commit &#x8BB0;&#x5F55;&#x67E5;&#x770B;</span>
+</code></pre>
 
                                 
                                 </section>
@@ -468,12 +482,12 @@
 
             
                 
-                <a href="0.0.1.html" class="navigation navigation-prev " aria-label="Previous page: 佰.0.1 rollup基础">
+                <a href="../gitbook/0.0.1.html" class="navigation navigation-prev " aria-label="Previous page: 零.0.1 gitbook插件集合">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="0.0.3.html" class="navigation navigation-next " aria-label="Next page: 佰.0.3 rollup插件及使用">
+                <a href="../glob/0.0.0.html" class="navigation navigation-next " aria-label="Next page: 拾.0.0 glob介绍">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -484,7 +498,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"佰.0.2 rollup打包格式","level":"6.3","depth":1,"next":{"title":"佰.0.3 rollup插件及使用","level":"6.4","depth":1,"path":"rollup/0.0.3.md","ref":"rollup/0.0.3.md","articles":[]},"previous":{"title":"佰.0.1 rollup基础","level":"6.2","depth":1,"path":"rollup/0.0.1.md","ref":"rollup/0.0.1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro"],"root":"workspace","styles":{"website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"coffee1949","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"前端笔记","language":"zh-hans","links":{"sidebar":{"知乎":"https://www.zhihu.com/people/codeing.cn/posts"}},"gitbook":"*","description":"前端笔记(front-end-notes)"},"file":{"path":"rollup/0.0.2.md","mtime":"2022-02-25T09:27:03.748Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-28T02:12:25.160Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"零.0.0 前端必装插件","level":"3.1","depth":1,"next":{"title":"拾.0.0 glob介绍","level":"5.1","depth":1,"path":"glob/0.0.0.md","ref":"glob/0.0.0.md","articles":[]},"previous":{"title":"零.0.1 gitbook插件集合","level":"2.2","depth":1,"path":"gitbook/0.0.1.md","ref":"gitbook/0.0.1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro"],"root":"workspace","styles":{"website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"coffee1949","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"前端笔记","language":"zh-hans","links":{"sidebar":{"知乎":"https://www.zhihu.com/people/codeing.cn/posts"}},"gitbook":"*","description":"前端笔记(front-end-notes)"},"file":{"path":"vscode/0.0.0.md","mtime":"2022-02-28T02:11:32.201Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-28T02:12:25.160Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
