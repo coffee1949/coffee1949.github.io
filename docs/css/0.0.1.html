@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>千.0.1 使用 vite 创建 vue3+ts 项目 · 前端笔记</title>
+        <title>贰.0.1 grid布局 · 前端笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -49,7 +49,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="0.0.2.html" />
+    <link rel="next" href="0.0.0.html" />
     
     
     <link rel="prev" href="0.0.0.html" />
@@ -163,9 +163,9 @@
         
         
     
-        <li class="chapter " data-level="4.1" data-path="../css/0.0.0.html">
+        <li class="chapter " data-level="4.1" data-path="0.0.0.html">
             
-                <a href="../css/0.0.0.html">
+                <a href="0.0.0.html">
             
                     
                     贰.0.0 css reset
@@ -176,9 +176,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.2" data-path="../css/0.0.1.html">
+        <li class="chapter active" data-level="4.2" data-path="0.0.1.html">
             
-                <a href="../css/0.0.1.html">
+                <a href="0.0.1.html">
             
                     
                     贰.0.1 grid布局
@@ -196,9 +196,9 @@
         
         
     
-        <li class="chapter " data-level="5.1" data-path="../css/0.0.0.html">
+        <li class="chapter " data-level="5.1" data-path="0.0.0.html">
             
-                <a href="../css/0.0.0.html">
+                <a href="0.0.0.html">
             
                     
                     肆.0.0 基本用法
@@ -209,9 +209,9 @@
             
         </li>
     
-        <li class="chapter " data-level="5.2" data-path="../css/0.0.1.html">
+        <li class="chapter active" data-level="5.2" data-path="0.0.1.html">
             
-                <a href="../css/0.0.1.html">
+                <a href="0.0.1.html">
             
                     
                     肆.0.1 回退版本：本地 && 远程
@@ -222,7 +222,7 @@
             
         </li>
     
-        <li class="chapter " data-level="5.3" data-path="../css/0.0.2.md">
+        <li class="chapter " data-level="5.3" data-path="0.0.2.md">
             
                 <span>
             
@@ -235,7 +235,7 @@
             
         </li>
     
-        <li class="chapter " data-level="5.4" data-path="../css/0.0.3.md">
+        <li class="chapter " data-level="5.4" data-path="0.0.3.md">
             
                 <span>
             
@@ -360,9 +360,9 @@
         
         
     
-        <li class="chapter " data-level="8.1" data-path="0.0.0.html">
+        <li class="chapter " data-level="8.1" data-path="../vite/0.0.0.html">
             
-                <a href="0.0.0.html">
+                <a href="../vite/0.0.0.html">
             
                     
                     千.0.0 vite 介绍
@@ -373,9 +373,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="8.2" data-path="0.0.1.html">
+        <li class="chapter " data-level="8.2" data-path="../vite/0.0.1.html">
             
-                <a href="0.0.1.html">
+                <a href="../vite/0.0.1.html">
             
                     
                     千.0.1 使用 vite 创建 vue3+ts 项目
@@ -386,9 +386,9 @@
             
         </li>
     
-        <li class="chapter " data-level="8.3" data-path="0.0.2.html">
+        <li class="chapter " data-level="8.3" data-path="../vite/0.0.2.html">
             
-                <a href="0.0.2.html">
+                <a href="../vite/0.0.2.html">
             
                     
                     千.0.2 vue2 中使用 vite
@@ -399,9 +399,9 @@
             
         </li>
     
-        <li class="chapter " data-level="8.4" data-path="0.0.3.html">
+        <li class="chapter " data-level="8.4" data-path="../vite/0.0.3.html">
             
-                <a href="0.0.3.html">
+                <a href="../vite/0.0.3.html">
             
                     
                     千.0.3 集成 eslint && prettier
@@ -508,7 +508,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >千.0.1 使用 vite 创建 vue3+ts 项目</a>
+        <a href=".." >贰.0.1 grid布局</a>
     </h1>
 </div>
 
@@ -523,138 +523,8 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x4F7F;&#x7528;-vite&#x521B;&#x5EFA;-vue3ts&#x9879;&#x76EE;">&#x4F7F;&#x7528; <code>vite</code>&#x521B;&#x5EFA; <code>vue3+ts</code>&#x9879;&#x76EE;</h1>
-<h5 id="&#x521B;&#x5EFA;&#x9879;&#x76EE;">&#x521B;&#x5EFA;&#x9879;&#x76EE;</h5>
-<pre><code class="lang-javascript">
-<span class="hljs-comment">// &#x683C;&#x5F0F;&#xFF1A;</span>
-yarn create vite &lt;&#x9879;&#x76EE;&#x540D;&gt; --template vue-ts
-
-yarn create vite myapp --template vue-ts
-</code></pre>
-<h5 id="&#x5B89;&#x88C5;&#x4F9D;&#x8D56;">&#x5B89;&#x88C5;&#x4F9D;&#x8D56;</h5>
-<pre><code class="lang-javascript">
-yarn
-</code></pre>
-<h5 id="&#x542F;&#x52A8;&#x9879;&#x76EE;">&#x542F;&#x52A8;&#x9879;&#x76EE;</h5>
-<pre><code class="lang-javascript">
-yarn dev
-</code></pre>
-<h5 id="&#x96C6;&#x6210;-vue-router">&#x96C6;&#x6210; <code>vue-router</code></h5>
-<p>1&#xFF0C;&#x5B89;&#x88C5;</p>
-<pre><code class="lang-javascript">
-yarn add vue-router
-</code></pre>
-<p>2&#xFF0C;&#x521B;&#x5EFA; <code>src/router/router.ts</code>&#x6587;&#x4EF6;&#xFF0C;&#x5185;&#x5BB9;&#x5982;&#x4E0B;</p>
-<pre><code class="lang-javascript">
-<span class="hljs-keyword">import</span> { createRouter, createWebHistory } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vue-router&apos;</span>
-
-<span class="hljs-keyword">const</span> routes = [
-    {
-        path: <span class="hljs-string">&apos;/&apos;</span>,
-        name: <span class="hljs-string">&apos;index&apos;</span>,
-        component: () =&gt; <span class="hljs-keyword">import</span>(<span class="hljs-string">&apos;../pages/index.vue&apos;</span>)
-    },
-    {
-        path: <span class="hljs-string">&apos;/list&apos;</span>,
-        name: <span class="hljs-string">&apos;list&apos;</span>,
-        component: () =&gt; <span class="hljs-keyword">import</span>(<span class="hljs-string">&apos;../pages/list.vue&apos;</span>)
-    }
-]
-
-<span class="hljs-keyword">const</span> router = createRouter({
-    history: createWebHistory(),
-    routes
-})
-
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> router
-</code></pre>
-<p>3&#xFF0C;&#x5728; <code>main.ts</code>&#x6587;&#x4EF6;&#x4E2D;&#x5F15;&#x5165; <code>router.js</code>&#x6587;&#x4EF6;&#xFF0C;<code>main.ts</code>&#x5185;&#x5BB9;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-javascript">
-<span class="hljs-keyword">import</span> { createApp } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vue&apos;</span>
-<span class="hljs-keyword">import</span> router <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./router/router&apos;</span>
-<span class="hljs-keyword">import</span> App <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./App.vue&apos;</span>
-
-createApp(App).use(router).mount(<span class="hljs-string">&apos;#app&apos;</span>)
-</code></pre>
-<h5 id="&#x96C6;&#x6210;-vuex">&#x96C6;&#x6210; <code>vuex</code></h5>
-<p>1&#xFF0C;&#x5B89;&#x88C5;</p>
-<pre><code class="lang-javascript">
-yarn add vuex
-</code></pre>
-<p>2&#xFF0C;&#x521B;&#x5EFA; <code>src/store/store.ts</code>&#x6587;&#x4EF6;&#xFF0C;&#x5185;&#x5BB9;&#x5982;&#x4E0B;</p>
-<pre><code class="lang-javascript">
-<span class="hljs-keyword">import</span> { createStore } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vuex&apos;</span>
-
-<span class="hljs-keyword">const</span> store = createStore({
-    state: {
-        count: <span class="hljs-number">1</span>
-    },
-    mutations: {
-        SET_COUNT(state){
-            state.count += <span class="hljs-number">1</span>
-        }
-    }
-})
-
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> store
-</code></pre>
-<p>3&#xFF0C;&#x4FEE;&#x6539; <code>main.ts</code>&#x5185;&#x5BB9;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-javascript">
-<span class="hljs-keyword">import</span> { createApp } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vue&apos;</span>
-<span class="hljs-keyword">import</span> router <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./router/router&apos;</span>
-<span class="hljs-keyword">import</span> store <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./store/store&apos;</span>
-<span class="hljs-keyword">import</span> App <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./App.vue&apos;</span>
-
-createApp(App).use(router).use(store).mount(<span class="hljs-string">&apos;#app&apos;</span>)
-</code></pre>
-<p>4&#xFF0C;&#x7EC4;&#x4EF6;&#x5185;&#x4F7F;&#x7528;</p>
-<pre><code class="lang-html">
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;store.commit(&apos;SET_COUNT&apos;)&quot;</span>&gt;</span>+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-</code></pre>
-<pre><code class="lang-typescript">
-<span class="hljs-keyword">import</span> { useStore } from <span class="hljs-string">&apos;vuex&apos;</span>
-<span class="hljs-keyword">const</span> store = useStore()
-</code></pre>
-<h5 id="&#x96C6;&#x6210;-sass">&#x96C6;&#x6210; <code>sass</code></h5>
-<p>&#x5B89;&#x88C5; <code>sass</code>&#x5373;&#x53EF;</p>
-<pre><code class="lang-javascript">
-yarn add sass -D
-</code></pre>
-<h5 id="&#x96C6;&#x6210;-axios">&#x96C6;&#x6210; <code>axios</code></h5>
-<pre><code class="lang-javascript">
-yarn add axios
-</code></pre>
-<h5 id="&#x4F7F;&#x7528;&#x4EE3;&#x66FF;src">&#x4F7F;&#x7528;<code>@</code>&#x4EE3;&#x66FF;<code>src</code></h5>
-<p>1&#xFF0C;&#x5728;<code>vite.config.js</code>&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x589E;&#x52A0;<code>resolve.alias</code>&#x914D;&#x7F6E;&#xFF0C;&#x5982;&#x4E0B;</p>
-<pre><code class="lang-javascript">
-<span class="hljs-keyword">import</span> { defineConfig } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;vite&quot;</span>;
-<span class="hljs-keyword">import</span> vue <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@vitejs/plugin-vue&quot;</span>;
-
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> defineConfig({
-  plugins: [vue()],
-
-  <span class="hljs-comment">// &#x589E;&#x52A0;resolve.alias&#x914D;&#x7F6E;</span>
-  <span class="hljs-comment">// &#x6B64;&#x64CD;&#x4F5C;&#x540E;&#x6709;&#xFF0C;&#x9879;&#x76EE;&#x5DF2;&#x7ECF;&#x652F;&#x6301;&#x4E86;&#xFF0C;&#x4F46;&#x662F;ts&#x4F9D;&#x7136;&#x4F1A;&#x98D8;&#x7EA2;&#xFF0C;&#x5904;&#x7406;&#x65B9;&#x6CD5;&#x5728;&#x4E0B;&#x9762;</span>
-  resolve: {
-    alias: {
-      <span class="hljs-string">&quot;@&quot;</span>: <span class="hljs-string">&quot;/src&quot;</span>,
-    },
-  },
-});
-</code></pre>
-<p>2&#xFF0C;&#x5904;&#x7406;<code>ts</code>&#x98D8;&#x7EA2;&#xFF1A;&#x4FEE;&#x6539;&#x9879;&#x76EE;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x7684;<code>tsconfig.json</code>&#x6587;&#x4EF6;&#xFF0C;&#x589E;&#x52A0;<code>compilerOptions.baseUrl</code>&#x548C;<code>compilerOptions.paths</code>&#x914D;&#x7F6E;&#x5B57;&#x6BB5;</p>
-<pre><code class="lang-javascript">{
-    compilerOptions: {
-
-        <span class="hljs-string">&quot;baseUrl&quot;</span>: <span class="hljs-string">&quot;./&quot;</span>,
-
-        <span class="hljs-string">&quot;paths&quot;</span>: {
-            <span class="hljs-string">&quot;@/*&quot;</span>: [<span class="hljs-string">&quot;src/*&quot;</span>]
-        }
-    }
-}
-</code></pre>
+                                <h1 id="grid&#x5E03;&#x5C40;">grid&#x5E03;&#x5C40;</h1>
+<h5 id=""> </h5>
 
                                 
                                 </section>
@@ -682,12 +552,12 @@ yarn add axios
 
             
                 
-                <a href="0.0.0.html" class="navigation navigation-prev " aria-label="Previous page: 千.0.0 vite 介绍">
+                <a href="0.0.0.html" class="navigation navigation-prev " aria-label="Previous page: 贰.0.0 css reset">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="0.0.2.html" class="navigation navigation-next " aria-label="Next page: 千.0.2 vue2 中使用 vite">
+                <a href="0.0.0.html" class="navigation navigation-next " aria-label="Next page: 肆.0.0 基本用法">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -698,7 +568,7 @@ yarn add axios
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"千.0.1 使用 vite 创建 vue3+ts 项目","level":"8.2","depth":1,"next":{"title":"千.0.2 vue2 中使用 vite","level":"8.3","depth":1,"path":"vite/0.0.2.md","ref":"vite/0.0.2.md","articles":[]},"previous":{"title":"千.0.0 vite 介绍","level":"8.1","depth":1,"path":"vite/0.0.0.md","ref":"vite/0.0.0.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro"],"root":"workspace","styles":{"website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"coffee1949","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"前端笔记","language":"zh-hans","links":{"sidebar":{"知乎":"https://www.zhihu.com/people/codeing.cn/posts"}},"gitbook":"*","description":"前端笔记(front-end-notes)"},"file":{"path":"vite/0.0.1.md","mtime":"2022-02-26T07:16:29.215Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-05T02:26:10.347Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"贰.0.1 grid布局","level":"4.2","depth":1,"next":{"title":"肆.0.0 基本用法","level":"5.1","depth":1,"path":"css/0.0.0.md","ref":"css/0.0.0.md","articles":[]},"previous":{"title":"贰.0.0 css reset","level":"4.1","depth":1,"path":"css/0.0.0.md","ref":"css/0.0.0.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro"],"root":"workspace","styles":{"website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"coffee1949","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"前端笔记","language":"zh-hans","links":{"sidebar":{"知乎":"https://www.zhihu.com/people/codeing.cn/posts"}},"gitbook":"*","description":"前端笔记(front-end-notes)"},"file":{"path":"css/0.0.1.md","mtime":"2022-03-05T02:21:30.863Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-05T02:26:10.347Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
