@@ -37,14 +37,17 @@
 - [佰.0.3 rollup 插件及使用](rollup/0.0.3.md)
 - [佰.0.4 rollup 配置文件内容](rollup/0.0.4.md)z
 
-### 千、vite
+### 千、VITE
 
 - [千.0.0 vite 介绍](vite/0.0.0.md)
 - [千.0.1 使用 vite 创建 vue3+ts 项目](vite/0.0.1.md)
 - [千.0.2 vue2 中使用 vite](vite/0.0.2.md)
 - [千.0.3 集成 eslint && prettier](vite/0.0.3.md)
 
-### 萬、xxxxx
+### 萬、THREE
+
+- [萬.0.0 学习资源](three/0.0.0.md)
+- [萬.0.1 知识点](three/0.0.1.md)
 
 ### 亿、高级原理
 
