@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>佰.0.3 rollup 插件及使用 · 前端笔记</title>
+        <title>亿.0.4 发布订阅模式 · 前端笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -49,10 +49,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="0.0.4.html" />
     
-    
-    <link rel="prev" href="0.0.2.html" />
+    <link rel="prev" href="0.0.3.html" />
     
 
     </head>
@@ -262,9 +260,9 @@
         
         
     
-        <li class="chapter " data-level="7.1" data-path="0.0.0.html">
+        <li class="chapter " data-level="7.1" data-path="../rollup/0.0.0.html">
             
-                <a href="0.0.0.html">
+                <a href="../rollup/0.0.0.html">
             
                     
                     佰.0.0 rollup 介绍
@@ -275,9 +273,9 @@
             
         </li>
     
-        <li class="chapter " data-level="7.2" data-path="0.0.1.html">
+        <li class="chapter " data-level="7.2" data-path="../rollup/0.0.1.html">
             
-                <a href="0.0.1.html">
+                <a href="../rollup/0.0.1.html">
             
                     
                     佰.0.1 rollup 基础
@@ -288,9 +286,9 @@
             
         </li>
     
-        <li class="chapter " data-level="7.3" data-path="0.0.2.html">
+        <li class="chapter " data-level="7.3" data-path="../rollup/0.0.2.html">
             
-                <a href="0.0.2.html">
+                <a href="../rollup/0.0.2.html">
             
                     
                     佰.0.2 rollup 打包格式
@@ -301,9 +299,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="7.4" data-path="0.0.3.html">
+        <li class="chapter " data-level="7.4" data-path="../rollup/0.0.3.html">
             
-                <a href="0.0.3.html">
+                <a href="../rollup/0.0.3.html">
             
                     
                     佰.0.3 rollup 插件及使用
@@ -314,9 +312,9 @@
             
         </li>
     
-        <li class="chapter " data-level="7.5" data-path="0.0.4.html">
+        <li class="chapter " data-level="7.5" data-path="../rollup/0.0.4.html">
             
-                <a href="0.0.4.html">
+                <a href="../rollup/0.0.4.html">
             
                     
                     佰.0.4 rollup 配置文件内容
@@ -439,9 +437,9 @@
         
         
     
-        <li class="chapter " data-level="10.1" data-path="../senior/0.0.0.html">
+        <li class="chapter " data-level="10.1" data-path="0.0.0.html">
             
-                <a href="../senior/0.0.0.html">
+                <a href="0.0.0.html">
             
                     
                     亿.0.0 数据响应式原理
@@ -452,9 +450,9 @@
             
         </li>
     
-        <li class="chapter " data-level="10.2" data-path="../senior/0.0.1.html">
+        <li class="chapter " data-level="10.2" data-path="0.0.1.html">
             
-                <a href="../senior/0.0.1.html">
+                <a href="0.0.1.html">
             
                     
                     亿.0.1 双向数据绑定原理
@@ -465,9 +463,9 @@
             
         </li>
     
-        <li class="chapter " data-level="10.3" data-path="../senior/0.0.2.html">
+        <li class="chapter " data-level="10.3" data-path="0.0.2.html">
             
-                <a href="../senior/0.0.2.html">
+                <a href="0.0.2.html">
             
                     
                     亿.0.2 MVVM 原理
@@ -478,9 +476,9 @@
             
         </li>
     
-        <li class="chapter " data-level="10.4" data-path="../senior/0.0.3.html">
+        <li class="chapter " data-level="10.4" data-path="0.0.3.html">
             
-                <a href="../senior/0.0.3.html">
+                <a href="0.0.3.html">
             
                     
                     亿.0.3 实现虚拟 DOM
@@ -491,9 +489,9 @@
             
         </li>
     
-        <li class="chapter " data-level="10.5" data-path="../senior/0.0.4.html">
+        <li class="chapter active" data-level="10.5" data-path="0.0.4.html">
             
-                <a href="../senior/0.0.4.html">
+                <a href="0.0.4.html">
             
                     
                     亿.0.4 发布订阅模式
@@ -534,7 +532,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >佰.0.3 rollup 插件及使用</a>
+        <a href=".." >亿.0.4 发布订阅模式</a>
     </h1>
 </div>
 
@@ -549,92 +547,93 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="rollup&#x63D2;&#x4EF6;&#x53CA;&#x4F7F;&#x7528;"><code>rollup</code>&#x63D2;&#x4EF6;&#x53CA;&#x4F7F;&#x7528;</h1>
-<h3 id="babel&#x4EE3;&#x7801;&#x8F6C;&#x8BD1;"><code>babel</code>&#x4EE3;&#x7801;&#x8F6C;&#x8BD1;</h3>
+                                <h1 id="&#x53D1;&#x5E03;&#x8BA2;&#x9605;&#x6A21;&#x5F0F;">&#x53D1;&#x5E03;&#x8BA2;&#x9605;&#x6A21;&#x5F0F;</h1>
 <pre><code class="lang-javascript">
-<span class="hljs-comment">// &#x5B89;&#x88C5;&#x4F9D;&#x8D56;</span>
-npm i -D @babel/core @babel/preset-env @rollup/plugin-babel
+<span class="hljs-comment">/**
+ * @author mrdoob / http://mrdoob.com/
+ * @homepage / https://github.com/mrdoob/eventdispatcher.js
+ */</span>
 
-<span class="hljs-comment">// &#x4F7F;&#x7528;&#x524D;&#x7F6E;&#x6761;&#x4EF6;&#xFF0C;&#x914D;&#x7F6E;babel.config.js | babel.config.json | .babelrc</span>
-<span class="hljs-comment">// babel.config.json</span>
-{
-  <span class="hljs-string">&quot;presets&quot;</span>: [
-    [
-      <span class="hljs-string">&quot;@babel/preset-env&quot;</span>,
-      {
-        <span class="hljs-string">&quot;useBuiltIns&quot;</span>: <span class="hljs-string">&quot;entry&quot;</span>
-      }
-    ]
-  ]
-}
-<span class="hljs-comment">// babel.config.js</span>
-<span class="hljs-built_in">module</span>.exports = {
-  <span class="hljs-string">&quot;presets&quot;</span>: [
-    [
-      <span class="hljs-string">&quot;@babel/preset-env&quot;</span>,
-      {
-        <span class="hljs-string">&quot;useBuiltIns&quot;</span>: <span class="hljs-string">&quot;entry&quot;</span>
-      }
-    ]
-  ]
-}
-<span class="hljs-comment">// .babelrc</span>
-{
-  <span class="hljs-string">&quot;presets&quot;</span>: [
-    [
-      <span class="hljs-string">&quot;@babel/preset-env&quot;</span>,
-      {
-        <span class="hljs-string">&quot;useBuiltIns&quot;</span>: <span class="hljs-string">&quot;entry&quot;</span>
-      }
-    ]
-  ]
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EventDispatcher</span> </span>{
+
+    addEventListener( type, listener ) {
+
+        <span class="hljs-keyword">if</span> ( <span class="hljs-keyword">this</span>._listeners === <span class="hljs-literal">undefined</span> ) <span class="hljs-keyword">this</span>._listeners = {};
+
+        <span class="hljs-keyword">const</span> listeners = <span class="hljs-keyword">this</span>._listeners;
+
+        <span class="hljs-keyword">if</span> ( listeners[ type ] === <span class="hljs-literal">undefined</span> ) {
+
+            listeners[ type ] = [];
+
+        }
+
+        <span class="hljs-keyword">if</span> ( listeners[ type ].indexOf( listener ) === - <span class="hljs-number">1</span> ) {
+
+            listeners[ type ].push( listener );
+
+        }
+
+    }
+
+    hasEventListener( type, listener ) {
+
+        <span class="hljs-keyword">if</span> ( <span class="hljs-keyword">this</span>._listeners === <span class="hljs-literal">undefined</span> ) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+
+        <span class="hljs-keyword">const</span> listeners = <span class="hljs-keyword">this</span>._listeners;
+
+        <span class="hljs-keyword">return</span> listeners[ type ] !== <span class="hljs-literal">undefined</span> &amp;&amp; listeners[ type ].indexOf( listener ) !== - <span class="hljs-number">1</span>;
+
+    }
+
+    removeEventListener( type, listener ) {
+
+        <span class="hljs-keyword">if</span> ( <span class="hljs-keyword">this</span>._listeners === <span class="hljs-literal">undefined</span> ) <span class="hljs-keyword">return</span>;
+
+        <span class="hljs-keyword">const</span> listeners = <span class="hljs-keyword">this</span>._listeners;
+        <span class="hljs-keyword">const</span> listenerArray = listeners[ type ];
+
+        <span class="hljs-keyword">if</span> ( listenerArray !== <span class="hljs-literal">undefined</span> ) {
+
+            <span class="hljs-keyword">const</span> index = listenerArray.indexOf( listener );
+
+            <span class="hljs-keyword">if</span> ( index !== - <span class="hljs-number">1</span> ) {
+
+                listenerArray.splice( index, <span class="hljs-number">1</span> );
+
+            }
+
+        }
+
+    }
+
+    dispatchEvent( event ) {
+
+        <span class="hljs-keyword">if</span> ( <span class="hljs-keyword">this</span>._listeners === <span class="hljs-literal">undefined</span> ) <span class="hljs-keyword">return</span>;
+
+        <span class="hljs-keyword">const</span> listeners = <span class="hljs-keyword">this</span>._listeners;
+        <span class="hljs-keyword">const</span> listenerArray = listeners[ event.type ];
+
+        <span class="hljs-keyword">if</span> ( listenerArray !== <span class="hljs-literal">undefined</span> ) {
+
+            event.target = <span class="hljs-keyword">this</span>;
+
+            <span class="hljs-comment">// Make a copy, in case listeners are removed while iterating.</span>
+            <span class="hljs-keyword">const</span> array = listenerArray.slice( <span class="hljs-number">0</span> );
+
+            <span class="hljs-keyword">for</span> ( <span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>, l = array.length; i &lt; l; i ++ ) {
+
+                array[ i ].call( <span class="hljs-keyword">this</span>, event );
+
+            }
+
+        }
+
+    }
+
 }
 
-<span class="hljs-comment">// &#x4F7F;&#x7528;&#xFF1A;rollup.config.js&#x6587;&#x4EF6;&#x914D;&#x7F6E;&#x5982;&#x4E0B;</span>
-<span class="hljs-keyword">import</span> babel <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@rollup/plugin-babel&quot;</span>
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
-    <span class="hljs-string">&quot;plugins&quot;</span>: [
-        babel({
-            exclude: <span class="hljs-string">&apos;node_modules/**&apos;</span>
-        })
-    ]
-}
-</code></pre>
-<h3 id="&#x4EE3;&#x7801;&#x538B;&#x7F29;&#xFF1A;rollup-plugin-terser">&#x4EE3;&#x7801;&#x538B;&#x7F29;&#xFF1A;<code>rollup-plugin-terser</code></h3>
-<pre><code class="lang-javascript">
-<span class="hljs-comment">// &#x5B89;&#x88C5;</span>
-npm i -D rollup-plugin-terser
-
-<span class="hljs-comment">// &#x914D;&#x7F6E;</span>
-<span class="hljs-keyword">import</span> { terser } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;rollup-plugin-terser&quot;</span>;
-<span class="hljs-keyword">import</span> babel <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@rollup/plugin-babel&quot;</span>
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
-    <span class="hljs-string">&quot;plugins&quot;</span>: [
-        babel({
-            exclude: <span class="hljs-string">&apos;node_modules/**&apos;</span>
-        }),
-        terser()
-    ]
-}
-</code></pre>
-<h3 id="rollupplugin-node-resolve">@rollup/plugin-node-resolve</h3>
-<pre><code class="lang-javascript">
-<span class="hljs-comment">// &#x5B89;&#x88C5;</span>
-yarn add -D @rollup/plugin-node-resolve
-
-<span class="hljs-comment">// &#x914D;&#x7F6E;</span>
-<span class="hljs-keyword">import</span> { nodeResolve } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@@rollup/plugin-node-resolve&quot;</span>;
-<span class="hljs-keyword">import</span> { terser } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;rollup-plugin-terser&quot;</span>;
-<span class="hljs-keyword">import</span> babel <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@rollup/plugin-babel&quot;</span>
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
-    <span class="hljs-string">&quot;plugins&quot;</span>: [
-        nodeResolve(),
-        babel({
-            exclude: <span class="hljs-string">&apos;node_modules/**&apos;</span>
-        }),
-        terser()
-    ]
-}
+<span class="hljs-keyword">export</span> { EventDispatcher };
 </code></pre>
 
                                 
@@ -663,14 +662,10 @@ yarn add -D @rollup/plugin-node-resolve
 
             
                 
-                <a href="0.0.2.html" class="navigation navigation-prev " aria-label="Previous page: 佰.0.2 rollup 打包格式">
+                <a href="0.0.3.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 亿.0.3 实现虚拟 DOM">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="0.0.4.html" class="navigation navigation-next " aria-label="Next page: 佰.0.4 rollup 配置文件内容">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -679,7 +674,7 @@ yarn add -D @rollup/plugin-node-resolve
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"佰.0.3 rollup 插件及使用","level":"7.4","depth":1,"next":{"title":"佰.0.4 rollup 配置文件内容","level":"7.5","depth":1,"path":"rollup/0.0.4.md","ref":"rollup/0.0.4.md","articles":[]},"previous":{"title":"佰.0.2 rollup 打包格式","level":"7.3","depth":1,"path":"rollup/0.0.2.md","ref":"rollup/0.0.2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro"],"root":"workspace","styles":{"website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"coffee1949","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"前端笔记","language":"zh-hans","links":{"sidebar":{"知乎":"https://www.zhihu.com/people/codeing.cn/posts"}},"gitbook":"*","description":"前端笔记(front-end-notes)"},"file":{"path":"rollup/0.0.3.md","mtime":"2022-02-25T09:27:03.749Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-08T12:25:16.420Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"亿.0.4 发布订阅模式","level":"10.5","depth":1,"previous":{"title":"亿.0.3 实现虚拟 DOM","level":"10.4","depth":1,"path":"senior/0.0.3.md","ref":"senior/0.0.3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro"],"root":"workspace","styles":{"website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"coffee1949","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"前端笔记","language":"zh-hans","links":{"sidebar":{"知乎":"https://www.zhihu.com/people/codeing.cn/posts"}},"gitbook":"*","description":"前端笔记(front-end-notes)"},"file":{"path":"senior/0.0.4.md","mtime":"2022-03-08T12:24:15.866Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-08T12:25:16.420Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
