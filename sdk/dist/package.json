@@ -1,0 +1,16 @@
+{
+  "name": "nokey-miniwechat-sdk",
+  "version": "1.0.0",
+  "description": "\"诺基车钥匙小程序sdk\"",
+  "main": "build/index.js",
+  "miniprogram": "build",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "digital",
+    "key"
+  ],
+  "author": "nokey",
+  "license": "ISC"
+}
