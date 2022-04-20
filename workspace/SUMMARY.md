@@ -33,6 +33,10 @@
 - [肆.0.5 source-map](webpack/0.0.5.md)
 
 
+### 伍、vue3 + vite + ts + uniapp
+
+- [伍.0.0 vite.config.js](uniapp/0.0.0.md)
+
 <!-- ### 伍、JAVASCRIPT && ECMASCRIPT -->
 
 ### 拾、GLOB
