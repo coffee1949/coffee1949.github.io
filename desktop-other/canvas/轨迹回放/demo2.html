@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width" />
+  <title>轨迹回放</title>
+
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body,
+    #container {
+      height: 100%;
+      width: 100%;
+    }
+
+    .input-card {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      padding: 10px;
+      background-color: #fff;
+    }
+
+    .input-item {
+      padding-top: 10px;
+    }
+
+    .input-card .btn {
+      margin-right: 1.2rem;
+      padding: 8px 30px;
+      border: 1px solid #555;
+      background-color: transparent;
+    }
+
+    .input-card .btn:last-child {
+      margin-right: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container"></div>
+  <div class="input-card">
+    <h4>轨迹回放控制</h4>
+    <div>
+      <select name="" id="snList">
+      </select>
+    </div>
+    <div class="input-item">
+      <input type="button" class="btn" value="开始动画" id="start" onclick="startAnimation()" />
+      <input type="button" class="btn" value="暂停动画" id="pause" onclick="pauseAnimation()" />
+    </div>
+    <div class="input-item">
+      <input type="button" class="btn" value="继续动画" id="resume" onclick="resumeAnimation()" />
+      <input type="button" class="btn" value="停止动画" id="stop" onclick="stopAnimation()" />
+    </div>
+  </div>
+
+  <script type="text/javascript"
+    src="https://webapi.amap.com/maps?v=1.4.15&key=361a86f5b83223c0bb7c4f2b31bbeae0"></script>
+  <script src="./data021.js"></script>
+  <script>
+    var originSourceResultData = []
+    var map; // 地图
+    var marker;  // 小车
+    var isMoving = false // 是否运动中
+    var resData = [] // 结果数据
+    var timestamp = null
+    let colors = [
+      '#ff0000',
+      '#D3E0D7',
+      '#A8BFB7',
+      '#F2D6BD',
+      '#F2B199',
+      '#D97E6A',
+      '#144276',
+      '#193559',
+      '#085A8C',
+      '#85D3F2',
+      '#F2811D',
+      '#A6A642',
+      '#91C9F2',
+      '#F5F582',
+      '#F26B68',
+      '#A65553',
+      '#D3E0D7',
+      '#A8BFB7',
+      '#F2D6BD',
+      '#F2B199',
+      '#D97E6A',
+      '#144276',
+      '#193559',
+      '#085A8C',
+      '#85D3F2',
+      '#F2811D',
+      '#A6A642',
+      '#91C9F2',
+      '#F5F582',
+      '#F26B68',
+      '#A65553',
+
+    ]
+
+    // 数据处理，去除明显不合理的数据
+    originSourceData = originSourceData.filter(item => {
+      return item[1] > 1 && item[2] > 1
+    })
+    // 数据格式化
+    originSourceData.map(item => {
+      originSourceResultData.push({
+        sn: item[3],
+        dateTime: new Date(item[0]).toLocaleDateString(),
+        timestamp: +new Date(item[0]),
+        data: [item[2], item[1]]
+      })
+    })
+    console.log('originSourceResultData', originSourceResultData)
+
+
+
+    // 初始化地图
+    map = new AMap.Map("container", {
+      resizeEnable: true,
+    });
+
+
+
+
+    // 获取所有的sn
+    let snData = new Set()
+    originSourceData.map(item => {
+      snData.add(item[3])
+    })
+    snData = Array.from(snData)
+
+    let html = ''
+    var fragment = document.createDocumentFragment();
+    for (var s = 0; s < snData.length; s++) {
+      option = document.createElement('option');
+      option.value = snData[s];
+      option.innerText = snData[s];
+      fragment.appendChild(option);
+    }
+    document.getElementById("snList").appendChild(fragment);
+    document.getElementById("snList").onchange = function (e) {//不能取消匿名函数
+      isMoving = false
+      dealData(e.target.value)
+    }
+
+    // 在这按时间排序
+    function dealData(sn) {
+      // 数据重置
+      resData = []
+      // 获取当前sn对应的数据
+      let originData = originSourceResultData.filter(item => item.sn == sn)
+      // 排序
+      originData = originData.sort(function (a, b) {
+        return a.timestamp - b.timestamp;
+      })
+
+      // 筛选每一天的数据
+      let resArr = new Set()
+      originData.map(item => {
+        resArr.add(item.dateTime)
+      })
+      resArr = Array.from(resArr)
+
+      console.log('resArr', resArr)
+      console.log('originData', originData)
+
+      // 拿到每一天的数据
+      resArr.map((item1, index1) => {
+        resData.push([])
+        originData.map(item2 => {
+          if (item1 === item2.dateTime) {
+            resData[index1].push(item2.data)
+          }
+        })
+      })
+
+      console.log('resdata:', resData)
+
+      map.setCenter(resData[0][0])
+      marker && map.remove(marker);
+
+      marker = new AMap.Marker({
+        map: map,
+        position: resData[0][0],
+        icon: "https://webapi.amap.com/images/car.png",
+        offset: new AMap.Pixel(-26, -13),
+        autoRotation: true,
+        angle: -90,
+      });
+
+      let index = 0
+
+      // 显示小车
+      let aaaaa = 0
+      marker.on("moving", function (e) {
+        console.log(++aaaaa)
+        if (aaaaa % 10 === 0) {
+          map.setCenter(resData[index][aaaaa])
+        }
+        passedPolyline.setPath(e.passedPath);
+      });
+
+      marker.on('moveend', function (e) {
+        timestamp = Date.now()
+      })
+
+
+      // 实时画线
+      var passedPolyline = new AMap.Polyline({
+        map: map,
+        strokeColor: colors[index], //线颜色
+        strokeWeight: 6, //线宽
+      });
+      let timer
+      timer && clearInterval(timer)
+      timer = setInterval(() => {
+        if (!isMoving) {
+          return
+        }
+        if (Date.now() - timestamp > 5000) {
+          aaaaa = 0
+          index++
+          passedPolyline = new AMap.Polyline({
+            map: map,
+            strokeColor: colors[index], //线颜色
+            strokeWeight: 6, //线宽
+          });
+          timestamp = Date.now()
+          isMoving && marker.moveAlong(resData[index], 100000);
+
+          if (index + 1 === resData.length) {
+            clearInterval(timer)
+          }
+        }
+      }, 2000)
+    }
+
+
+
+    // 开始动画
+    function startAnimation() {
+      if (isMoving) {
+        return
+      }
+      isMoving = true
+      // 100000是速度
+      timestamp = Date.now()
+      console.log(timestamp, marker, resData)
+      marker.moveAlong(resData[0], 100000);
+    }
+    // 暂停动画
+    function pauseAnimation() {
+      marker.pauseMove();
+    }
+    // 继续动画
+    function resumeAnimation() {
+      marker.resumeMove();
+    }
+    // 停止动画
+    function stopAnimation() {
+      isMoving = false
+      marker.stopMove();
+    }
+
+    dealData(snData[0])
+  </script>
+</body>
+
+</html>

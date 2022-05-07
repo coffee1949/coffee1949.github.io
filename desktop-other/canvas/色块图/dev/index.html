@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>色块图</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            padding: 6px;
+            border: 1px solid salmon;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="chart"></div>
+    </div>
+
+    <script>
+        var canvas, ctx, originX, originY, cWidth, cHeight, cMargin, cSpace, xMinVal, xMaxVal
+        var ctr = 1, numCtr = 50, blockHeight = 50
+
+        var dataArr = [
+            [Date.now() - 30 * 60 * 1000, Math.ceil(Math.random() * 3), '我是显示信息'],
+            [Date.now() - 28 * 60 * 1000, Math.ceil(Math.random() * 3), '我是显示信息'],
+            [Date.now() - 27 * 60 * 1000, Math.ceil(Math.random() * 3), '我是显示信息'],
+            [Date.now() - 26 * 60 * 1000, Math.ceil(Math.random() * 3), '我是显示信息'],
+            [Date.now() - 25 * 60 * 1000, Math.ceil(Math.random() * 3), '我是显示信息'],
+            [Date.now() - 24 * 60 * 1000, Math.ceil(Math.random() * 3), '我是显示信息'],
+            [Date.now() - 23 * 60 * 1000, Math.ceil(Math.random() * 3), '我是显示信息'],
+            [Date.now() - 22 * 60 * 1000, Math.ceil(Math.random() * 3), '我是显示信息'],
+            [Date.now() - 21 * 60 * 1000, Math.ceil(Math.random() * 3), '我是显示信息'],
+            [Date.now() - 20 * 60 * 1000, Math.ceil(Math.random() * 3), '我是显示信息'],
+            [Date.now() - 19 * 60 * 1000, Math.ceil(Math.random() * 3), '我是显示信息'],
+            [Date.now() - 18 * 60 * 1000, Math.ceil(Math.random() * 3), '我是显示信息'],
+            [Date.now() - 17 * 60 * 1000, Math.ceil(Math.random() * 3), '我是显示信息'],
+            [Date.now() - 16 * 60 * 1000, Math.ceil(Math.random() * 3), '我是显示信息'],
+            [Date.now() - 15 * 60 * 1000, Math.ceil(Math.random() * 3), '我是显示信息'],
+            [Date.now() - 14 * 60 * 1000, Math.ceil(Math.random() * 3), '我是显示信息'],
+            [Date.now() - 13 * 60 * 1000, Math.ceil(Math.random() * 3), '我是显示信息'],
+            [Date.now() - 12 * 60 * 1000, Math.ceil(Math.random() * 3), '我是显示信息'],
+            [Date.now() - 11 * 60 * 1000, Math.ceil(Math.random() * 3), '我是显示信息'],
+            [Date.now() - 10 * 60 * 1000, Math.ceil(Math.random() * 3), '我是显示信息'],
+            [Date.now() - 9 * 60 * 1000, Math.ceil(Math.random() * 3), '我是显示信息'],
+            [Date.now() - 8 * 60 * 1000, Math.ceil(Math.random() * 3), '我是显示信息'],
+            [Date.now() - 7 * 60 * 1000, Math.ceil(Math.random() * 3), '我是显示信息'],
+            [Date.now() - 6 * 60 * 1000, Math.ceil(Math.random() * 3), '我是显示信息'],
+            [Date.now() - 5 * 60 * 1000, Math.ceil(Math.random() * 3), '我是显示信息'],
+            [Date.now() - 4 * 60 * 1000, Math.ceil(Math.random() * 3), '我是显示信息'],
+            [Date.now() - 3 * 60 * 1000, Math.ceil(Math.random() * 3), '我是显示信息'],
+            [Date.now() - 2 * 60 * 1000, Math.ceil(Math.random() * 3), '我是显示信息'],
+            [Date.now() - 1 * 60 * 1000, Math.ceil(Math.random() * 3), '我是显示信息'],
+            [Date.now()],
+        ]
+
+        console.log('dataArr', dataArr)
+        let chart = document.getElementById('chart')
+        initCanvas()
+        drawLineLabelMarkers()
+        drawBlockChart()
+
+        function initCanvas() {
+            cSpace = 60
+            cMargin = 80
+
+            canvas = document.createElement('canvas')
+            if (canvas && canvas.getContext) {
+                ctx = canvas.getContext('2d')
+            }
+            canvas.width = chart.clientWidth * 2
+            canvas.height = 500 * 2
+
+            canvas.style.width = canvas.width / 2 + 'px'
+            canvas.style.height = canvas.height / 2 + 'px'
+            canvas.style.border = '1px solid #000'
+            canvas.style.backgroundColor = '#ccc'
+
+            cWidth = canvas.width - cSpace * 2 - cMargin * 2
+            cHeight = canvas.height - cSpace * 2 - cMargin * 2
+
+            originX = cSpace + cMargin
+            originY = cSpace + cHeight
+
+            chart.appendChild(canvas)
+        }
+        function drawLineLabelMarkers() {
+            ctx.font = "24px Arial"
+            ctx.lineWidth = 2
+            ctx.fillStyle = '#000'
+            ctx.strokeStyle = '#000'
+
+            // 绘制x轴
+            drawLine(originX, originY, originX + cWidth, originY)
+            // 绘制y轴
+            drawLine(originX, originY, originX, cMargin)
+
+            // 绘制刻度及标记
+            drawMarkers()
+        }
+        function drawMarkers() {
+            xMinVal = dataArr[0][0]
+            xMaxVal = dataArr[dataArr.length - 1][0]
+            console.log(xMinVal, xMaxVal)
+            console.log((xMaxVal - xMinVal) / 60000)
+
+            for (let i = 0; i < 10; i++) {
+                drawLine(originX + cWidth / 10 * (i + 1), originY, originX + cWidth / 10 * (i + 1), originY - 10)
+
+                ctx.save()
+                ctx.translate(originX + cWidth / 10 * i, originY)
+                ctx.rotate(-Math.PI / 4)
+                ctx.fillText(xMinVal + (xMaxVal - xMinVal) / 10, -180, 20)
+                ctx.restore()
+
+            }
+        }
+        function drawBlockChart() {
+            for (let i = 0; i < dataArr.length; i++) {
+                let ox = originX + (dataArr[i][0] - xMinVal) / (xMaxVal - xMinVal) * cWidth
+
+                let oy = cSpace + cHeight / 2 - blockHeight / 2
+
+                let color = 'green'
+                if (dataArr[i][1] === 2) {
+                    color = 'yellow'
+                } else if (dataArr[i][1] === 3) {
+                    color = 'red'
+                }
+
+                let width = 0
+                if (i + 1 < dataArr.length) {
+                    width = 1 + (dataArr[i+1][0] - dataArr[i][0]) / (xMaxVal - xMinVal) * cWidth
+                }else{
+                    width = 100
+                    color = '#000'
+                }
+
+                
+
+                drawRect(ox, oy, width, blockHeight, color)
+            }
+        }
+        function drawLine(x, y, ox, oy) {
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.lineTo(ox, oy);
+            ctx.stroke();
+            ctx.closePath();
+        }
+
+        function drawRect(x, y, X, Y, color, mouseMove, ifDrag) {
+
+            ctx.beginPath();
+
+            if (parseInt(x) % 2 !== 0) {
+                x += 1;
+            }
+            if (parseInt(y) % 2 !== 0) {
+                y += 1;
+            }
+            if (parseInt(X) % 2 !== 0) {
+                X += 1;
+            }
+            if (parseInt(Y) % 2 !== 0) {
+                Y += 1;
+            }
+            ctx.rect(parseInt(x), parseInt(y), parseInt(X), parseInt(Y));
+
+            //如果移动到拖动选择范围按钮
+            canvas.style.cursor = "default";
+            if (ifDrag && ctx.isPointInPath(mousePosition.x * 2, mousePosition.y * 2)) { //如果是鼠标移动的到柱状图上，重新绘制图表
+                canvas.style.cursor = "all-scroll";
+            }
+            ctx.fillStyle = color;
+            ctx.fill();
+            ctx.closePath();
+
+        }
+    </script>
+</body>
+
+</html>

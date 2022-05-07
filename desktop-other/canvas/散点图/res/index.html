@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .container {
+            padding: 6px;
+            border: 1px solid red;
+        }
+
+        #chart {
+            min-height: 160px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="chart"></div>
+    </div>
+    <script src='./data.js'></script>
+    <script>
+
+        let showArr = originDataArr.slice(0, Math.floor(originDataArr.length / 50))
+
+        
+
+        console.log(showArr.length)
+        drawChart()
+
+        function drawChart() {
+            var canvas, ctx;
+            var cHeight, cWidth, cMargin, cSpace
+            var originX, originY
+            let xMinVal = 0
+            let xMaxVal = 0
+            let yMinVal = 0
+            let yMaxVal = 100
+            let ctr = 1
+            let speed = 10
+            let dragBarX, dragBarWidth = 30
+
+
+            // 创建canvas，并填充到页面
+            canvas = document.createElement('canvas')
+            if (canvas && canvas.getContext) {
+                ctx = canvas.getContext('2d')
+            }
+            canvas.innerHTML = "您的浏览器不支持HTML5 canvas"
+            document.getElementById('chart').append(canvas)
+
+
+
+
+            // 初始化图表
+            initChart()
+            function initChart() {
+                cMargin = 60
+                cSpace = 80
+                canvas.width = document.getElementById('chart').clientWidth * 2
+                canvas.height = 2000 / 2
+                canvas.style.width = canvas.width / 2 + 'px'
+                canvas.style.height = canvas.height / 2 + 'px'
+                canvas.style.border = '1px solid #000' // 边框内都是canvas
+
+                cHeight = canvas.height - cMargin * 2 - cSpace
+                cWidth = canvas.width - cMargin * 2 - cSpace
+
+
+
+                originX = cMargin + cSpace
+                originY = cMargin + cHeight
+
+                dragBarX = originX + cWidth / 50 - dragBarWidth / 2
+
+
+                // 散点图信息
+                let xArr = []
+                let yArr = []
+
+                showArr.map(item => {
+                    xArr.push(+new Date(item.t))
+                })
+
+                xMinVal = Math.min.apply(null, xArr) - 2 * 60 * 1000
+                xMaxVal = Math.max.apply(null, xArr) + 2 * 60 * 1000
+            }
+
+
+            //检测鼠标移动
+            var mouseTimer = null;
+            var mousePosition = {}
+            canvas.addEventListener('mousemove', function (e) {
+                e = e || window.event;
+                if (e.offsetX || e.offsetX == 0) {
+                    mousePosition.x = e.offsetX;
+                    mousePosition.y = e.offsetY;
+                } else if (e.layerX || e.layerX == 0) {
+                    mousePosition.x = e.layerX;
+                    mousePosition.y = e.layerY;
+                }
+
+                mouseTimer && clearTimeout(mouseTimer)
+                mouseTimer = setTimeout(function () {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height)
+                    drawLineLabelMarkers()
+                    drawMarkers()
+                    drawChartAnimate(true)
+                    drawDragBar()
+                }, 100)
+
+            })
+
+            canvas.onmousedown = function(e){
+                if (canvas.style.cursor != "all-scroll") {
+                    return false;
+                }
+
+                document.onmousemove = function(e){
+                    e = e || window.event;
+                    if (e.offsetX || e.offsetX == 0) {
+                        dragBarX = e.offsetX * 2 - dragBarWidth / 2;
+                    } else if (e.layerX || e.layerX == 0) {
+                        dragBarX = e.layerX * 2 - dragBarWidth / 2;
+                    }
+
+                    if (dragBarX <= originX) {
+                        dragBarX = originX
+                    }
+                    if (dragBarX > originX + cWidth - dragBarWidth) {
+                        dragBarX = originX + cWidth - dragBarWidth
+                    }
+
+                    var nb = Math.ceil(originDataArr.length * ((dragBarX - cMargin - cSpace) / cWidth));
+                    showArr = originDataArr.slice(0, nb || 1);
+                }
+
+                document.onmouseup = function () {
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+                }
+
+            }
+
+            // 绘制坐标轴
+            drawLineLabelMarkers()
+            function drawLineLabelMarkers() {
+
+                ctx.font = '24px Arial'
+                ctx.lineWidth = 1
+                ctx.fillStyle = '#000'
+                ctx.strokeStyle = '#000'
+                // 绘制x轴
+                drawLine(originX, originY, originX + cWidth, originY)
+                // 绘制y轴
+                drawLine(originX, originY, originX, cMargin)
+            }
+
+            // 绘制刻度标签
+            drawMarkers()
+            function drawMarkers() {
+                // 只需要绘制x轴即可
+                ctx.fillStyle = '#f00'
+                ctx.textAlign = 'center'
+
+                let aaaa = (xMaxVal - xMinVal) / 10
+                for (var i = 0; i < 10; i++) { // 只绘制10个刻度
+                    let markerVal = parseInt(i * aaaa + xMinVal)
+                    let xMarker = parseInt(originX + cWidth * (markerVal - xMinVal) / (xMaxVal - xMinVal))
+                    let yMarker = originY + 30
+                    ctx.save()
+                    ctx.translate(xMarker, yMarker)
+                    ctx.rotate(-Math.PI / 4)
+                    let hour = new Date(markerVal).getHours()
+                    let min = new Date(markerVal).getMinutes()
+                    let sec = new Date(markerVal).getSeconds()
+                    hour = hour < 10 ? '0' + hour : hour
+                    min = min < 10 ? '0' + min : min
+                    sec = sec < 10 ? '0' + sec : sec
+                    ctx.fillText(hour + ':' + min + ':' + sec, -30, 0, cMargin + cSpace - 40)
+                    ctx.restore()
+
+                    if (i !== 0) {
+                        drawLine(xMarker, originY, xMarker, originY - 10)
+                    }
+                }
+            }
+
+            // 绘制散点，动画显示
+            drawChartAnimate()
+
+            function drawChartAnimate(mouseMove = false) {
+                let ifTip = false
+                let tipObj = null
+
+                for (let i = 0; i < showArr.length; i++) {
+                    ctx.fillStyle = 'rgba(255,0,0,0.5)'
+
+
+                    let oX = originX + cWidth * (+new Date(showArr[i].t) - xMinVal) / (xMaxVal - xMinVal)
+
+                    let oY = 0
+
+                    oY = originY - originY * (i % 5) / 5 - 100
+
+
+
+                    ctx.beginPath()
+                    // ctx.arc(oX, oY, 16 * ctr / 50, 0, Math.PI * 2, true)
+                    ctx.rect(oX, oY, 6 * ctr / 50, 60 * ctr / 50)
+
+                    // 绘制提示
+                    if (!ifTip && mouseMove && ctx.isPointInPath(mousePosition.x * 2, mousePosition.y * 2)) {
+                        ifTip = true
+                        tipObj = showArr[i]
+                        canvas.style.cursor = "all-scroll";
+                    } else {
+                        canvas.style.cursor = "default";
+                    }
+                    ctx.textAlign = 'left'
+
+
+                    let hour = new Date(showArr[i].t).getHours()
+                    let min = new Date(showArr[i].t).getMinutes()
+                    let sec = new Date(showArr[i].t).getSeconds()
+                    hour = hour < 10 ? '0' + hour : hour
+                    min = min < 10 ? '0' + min : min
+                    sec = sec < 10 ? '0' + sec : sec
+                    ctx.fillText(hour + ':' + min + ':' + sec + ':000', oX + 10, oY);
+                    ctx.fillText(showArr[i].en, oX + 10, oY + 38);
+
+
+                    ctx.fill()
+                }
+
+                ifTip && drawTips(mousePosition.x * 2, mousePosition.y * 2, tipObj)
+
+                if (ctr < 50) {
+                    ctr++
+                    setTimeout(() => {
+                        ctx.clearRect(0, 0, canvas.width, canvas.height)
+                        drawLineLabelMarkers()
+                        drawMarkers()
+                        drawChartAnimate()
+                        drawDragBar()
+                    }, speed *= 0.8);
+                }
+            }
+
+            //绘制拖动轴
+            drawDragBar();
+            function drawDragBar() {
+
+                // 绘制带有背景色的datazoom
+                drawRect(originX, originY + cSpace, cWidth, cMargin, false, "#E8E4F0");
+                // 绘制已经拖拽的部分
+                drawRect(originX, originY + cSpace, dragBarX - originX, cMargin, false, "#BCCEF5");
+                // 绘制可拖拽的小块
+                drawRect(dragBarX, originY + cSpace, dragBarWidth, cMargin, false, "#078ACB", false, true);
+            }
+
+            //绘制方块
+            // x,y坐标
+            // X,Y宽高
+            // mouseMove
+            // color
+            function drawRect(x, y, X, Y, mouseMove, color, ifBigBar, ifDrag) {
+                console.log(x, y, X, Y, mouseMove, color)
+                ctx.beginPath();
+
+
+                if (parseInt(x) % 2 !== 0) {
+                    x += 1;
+                }
+                if (parseInt(y) % 2 !== 0) {
+                    y += 1;
+                }
+                if (parseInt(X) % 2 !== 0) {
+                    X += 1;
+                }
+                if (parseInt(Y) % 2 !== 0) {
+                    Y += 1;
+                }
+
+                ctx.rect(parseInt(x), parseInt(y), parseInt(X), parseInt(Y));
+
+                if (ifBigBar && mouseMove && ctx.isPointInPath(mousePosition.x * 2, mousePosition.y * 2)) { //如果是鼠标移动的到柱状图上，重新绘制图表
+                    ctx.strokeStyle = color;
+                    ctx.strokeWidth = 20;
+                    ctx.stroke();
+                }
+                //如果移动到拖动选择范围按钮
+                canvas.style.cursor = "default";
+                if (ifDrag && ctx.isPointInPath(mousePosition.x * 2, mousePosition.y * 2)) { //如果是鼠标移动的到柱状图上，重新绘制图表
+                    canvas.style.cursor = "all-scroll";
+                }
+                ctx.fillStyle = color;
+                ctx.fill();
+                ctx.closePath();
+
+            }
+
+            
+
+            function drawTips(oX, oY, obj) {
+                ctx.save();
+                ctx.beginPath();
+                ctx.fillStyle = "rgba(0,0,0,0.5)";
+                var H = 100;
+                roundedRect(ctx, oX + 10, oY - H / 2, 2 * H, H, 5);
+
+                ctx.fillStyle = "#fff";
+
+                let hour = new Date(obj.t).getHours()
+                let min = new Date(obj.t).getMinutes()
+                let sec = new Date(obj.t).getSeconds()
+                hour = hour < 10 ? '0' + hour : hour
+                min = min < 10 ? '0' + min : min
+                sec = sec < 10 ? '0' + sec : sec
+
+                ctx.fillText('sssss' + "：" + hour + ':' + min + ':' + sec, oX + H, oY - H / 10);
+                ctx.fillText('mmmmm' + "：" + obj.en, oX + H, oY + H / 4);
+                ctx.restore();
+
+            }
+
+            //绘制圆角矩形的方法
+            function roundedRect(ctx, x, y, width, height, radius) {
+                ctx.moveTo(x, x + radius);
+                ctx.beginPath();
+                ctx.lineTo(x, y + height - radius);
+                ctx.quadraticCurveTo(x, y + height, x + radius, y + height);
+                ctx.lineTo(x + width - radius, y + height);
+                ctx.quadraticCurveTo(x + width, y + height, x + width, y + height - radius);
+                ctx.lineTo(x + width, y + radius);
+                ctx.quadraticCurveTo(x + width, y, x + width - radius, y);
+                ctx.lineTo(x + radius, y);
+                ctx.quadraticCurveTo(x, y, x, y + radius);
+                ctx.closePath();
+                ctx.fill();
+            }
+
+            // 绘制线条
+            function drawLine(x, y, X, Y) {
+                ctx.beginPath()
+                ctx.moveTo(x, y)
+                ctx.lineTo(X, Y)
+                ctx.stroke()
+                ctx.closePath()
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

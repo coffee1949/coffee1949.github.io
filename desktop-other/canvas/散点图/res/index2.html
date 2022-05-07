@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>...</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            padding: 6px;
+            border: 1px solid salmon;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="chart"></div>
+    </div>
+
+    <script src="./data2.js"></script>
+    <script>
+        console.log(dataArr)
+
+        var chart,canvas,ctx
+        chart = document.getElementById('chart')
+        canvas = document.createElement('canvas')
+        canvas && canvas.getContext && (ctx = canvas.getContext('2d'))
+        canvas.innerHTML = '您的浏览器不支持HTML5  canvas'
+
+        // 处理数据，获取canvas的宽高等信息，返回所需格式的数据
+        var chartConfig = handleData()
+        // 设置canvas属性，如：宽高等，根据数据来设置
+        canvasAttributeSetting()
+
+
+        handleData
+
+
+        function canvasAttributeSetting(){
+
+        }
+        
+
+    </script>
+</body>
+</html>
