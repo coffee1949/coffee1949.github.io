@@ -659,7 +659,7 @@
 <pre><code class="lang-javascript">
 <span class="hljs-comment">// &#x683C;&#x5F0F;&#xFF1A;</span>
 yarn create vite &lt;&#x9879;&#x76EE;&#x540D;&gt; --template vue-ts
-
+<span class="hljs-comment">// &#x5982;&#xFF1A;</span>
 yarn create vite myapp --template vue-ts
 </code></pre>
 <h5 id="&#x5B89;&#x88C5;&#x4F9D;&#x8D56;">&#x5B89;&#x88C5;&#x4F9D;&#x8D56;</h5>
@@ -707,46 +707,12 @@ yarn add vue-router
 
 createApp(App).use(router).mount(<span class="hljs-string">&apos;#app&apos;</span>)
 </code></pre>
-<h5 id="&#x96C6;&#x6210;-vuex">&#x96C6;&#x6210; <code>vuex</code></h5>
+<h5 id="&#x96C6;&#x6210;pinia&#xFF08;&#x72B6;&#x6001;&#x7BA1;&#x7406;&#xFF09;">&#x96C6;&#x6210;Pinia&#xFF08;&#x72B6;&#x6001;&#x7BA1;&#x7406;&#xFF09;</h5>
 <p>1&#xFF0C;&#x5B89;&#x88C5;</p>
 <pre><code class="lang-javascript">
-yarn add vuex
+yarn add pinia
 </code></pre>
-<p>2&#xFF0C;&#x521B;&#x5EFA; <code>src/store/store.ts</code>&#x6587;&#x4EF6;&#xFF0C;&#x5185;&#x5BB9;&#x5982;&#x4E0B;</p>
-<pre><code class="lang-javascript">
-<span class="hljs-keyword">import</span> { createStore } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vuex&apos;</span>
-
-<span class="hljs-keyword">const</span> store = createStore({
-    state: {
-        count: <span class="hljs-number">1</span>
-    },
-    mutations: {
-        SET_COUNT(state){
-            state.count += <span class="hljs-number">1</span>
-        }
-    }
-})
-
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> store
-</code></pre>
-<p>3&#xFF0C;&#x4FEE;&#x6539; <code>main.ts</code>&#x5185;&#x5BB9;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-javascript">
-<span class="hljs-keyword">import</span> { createApp } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vue&apos;</span>
-<span class="hljs-keyword">import</span> router <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./router/router&apos;</span>
-<span class="hljs-keyword">import</span> store <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./store/store&apos;</span>
-<span class="hljs-keyword">import</span> App <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./App.vue&apos;</span>
-
-createApp(App).use(router).use(store).mount(<span class="hljs-string">&apos;#app&apos;</span>)
-</code></pre>
-<p>4&#xFF0C;&#x7EC4;&#x4EF6;&#x5185;&#x4F7F;&#x7528;</p>
-<pre><code class="lang-html">
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;store.commit(&apos;SET_COUNT&apos;)&quot;</span>&gt;</span>+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-</code></pre>
-<pre><code class="lang-typescript">
-<span class="hljs-keyword">import</span> { useStore } from <span class="hljs-string">&apos;vuex&apos;</span>
-<span class="hljs-keyword">const</span> store = useStore()
-</code></pre>
+<p>2&#xFF0C;&#x4F7F;&#x7528;&#xFF1A;&#x89C1;&#x5B98;&#x7F51;</p>
 <h5 id="&#x96C6;&#x6210;-sass">&#x96C6;&#x6210; <code>sass</code></h5>
 <p>&#x5B89;&#x88C5; <code>sass</code>&#x5373;&#x53EF;</p>
 <pre><code class="lang-javascript">
@@ -785,6 +751,21 @@ yarn add axios
         }
     }
 }
+</code></pre>
+<h5 id="eslint--prettier">eslint &amp;&amp; prettier</h5>
+<p>1&#xFF0C;eslint&#x5206;&#x4E3A;npm&#x5305;&#x548C;vscode&#x63D2;&#x4EF6;</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// npm&#x5305;&#x53EA;&#x662F;&#x7528;&#x6765;&#x68C0;&#x6D4B;&#x8BED;&#x6CD5;&#x662F;&#x5426;&#x7B26;&#x5408;&#x5B9A;&#x4E49;&#x7684;&#x89C4;&#x8303;&#xFF0C;</span>
+<span class="hljs-comment">// &#x5E76;&#x4E14;&#x8981;&#x4E3B;&#x52A8;&#x4F7F;&#x7528;&#x547D;&#x4EE4;&#x6821;&#x9A8C;&#x624D;&#x4F1A;&#x68C0;&#x6D4B;&#x4EE3;&#x7801;&#x662F;&#x5426;&#x7B26;&#x5408;&#x89C4;&#x8303;&#xFF0C;</span>
+<span class="hljs-comment">// &#x9488;&#x5BF9;&#x4E0D;&#x7B26;&#x5408;&#x89C4;&#x8303;&#x7684;&#x8BED;&#x6CD5;&#x4EE3;&#x7801;&#x4E5F;&#x53EA;&#x80FD;&#x8FDB;&#x884C;&#x90E8;&#x5206;&#x4FEE;&#x590D;&#xFF0C;&#x6BD4;&#x5982;&#x7F29;&#x8FDB;&#x3001;&#x5355;&#x53CC;&#x5F15;&#x53F7;&#x3001;&#x662F;&#x5426;&#x52A0;&#x5206;&#x53F7;&#x7B49;</span>
+
+<span class="hljs-comment">/**************** &#x56E0;&#x6B64;&#x9700;&#x8981;eslint&#x7684;&#x63D2;&#x4EF6;&#x7684;&#x914D;&#x5408; *****************/</span>
+
+<span class="hljs-comment">// eslint&#x63D2;&#x4EF6;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;&#x4E3A;&#xFF1A;&#x5F53;&#x4FDD;&#x5B58;&#x65F6;&#x81EA;&#x52A8;&#x6821;&#x9A8C;&#x4EE3;&#x7801;&#x5E76;&#x4E14;&#x683C;&#x5F0F;&#x5316;</span>
+<span class="hljs-comment">// &#x4E00;&#x822C;&#x4E0D;&#x4F1A;&#x4F7F;&#x7528;eslint&#x7684;&#x683C;&#x5F0F;&#x5316;&#x529F;&#x80FD;&#xFF0C;&#x4F1A;&#x91C7;&#x7528;prettier&#x7684;&#x683C;&#x5F0F;&#x5316;&#x529F;&#x80FD;</span>
+</code></pre>
+<p>2&#xFF0C;prettier&#x4E5F;&#x5206;&#x4E3A;npm&#x5305;&#x548C;vscode&#x63D2;&#x4EF6;</p>
+<pre><code class="lang-javascript">
+
 </code></pre>
 
                                 
@@ -829,7 +810,7 @@ yarn add axios
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"千.0.1 使用 vite 创建 vue3+ts 项目","level":"10.2","depth":1,"next":{"title":"千.0.2 vue2 中使用 vite","level":"10.3","depth":1,"path":"vite/0.0.2.md","ref":"vite/0.0.2.md","articles":[]},"previous":{"title":"千.0.0 vite 介绍","level":"10.1","depth":1,"path":"vite/0.0.0.md","ref":"vite/0.0.0.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro"],"root":"workspace","styles":{"website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"coffee1949","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"前端笔记","language":"zh-hans","links":{"sidebar":{"知乎":"https://www.zhihu.com/people/codeing.cn/posts"}},"gitbook":"*","description":"前端笔记(front-end-notes)"},"file":{"path":"vite/0.0.1.md","mtime":"2022-02-26T07:16:29.215Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-05-07T04:12:19.647Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"千.0.1 使用 vite 创建 vue3+ts 项目","level":"10.2","depth":1,"next":{"title":"千.0.2 vue2 中使用 vite","level":"10.3","depth":1,"path":"vite/0.0.2.md","ref":"vite/0.0.2.md","articles":[]},"previous":{"title":"千.0.0 vite 介绍","level":"10.1","depth":1,"path":"vite/0.0.0.md","ref":"vite/0.0.0.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro"],"root":"workspace","styles":{"website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"coffee1949","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"前端笔记","language":"zh-hans","links":{"sidebar":{"知乎":"https://www.zhihu.com/people/codeing.cn/posts"}},"gitbook":"*","description":"前端笔记(front-end-notes)"},"file":{"path":"vite/0.0.1.md","mtime":"2022-05-19T01:26:52.408Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-05-19T01:31:31.539Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
