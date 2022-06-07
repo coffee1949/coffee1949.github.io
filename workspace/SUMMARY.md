@@ -37,7 +37,9 @@
 
 - [伍.0.0 vite.config.js](uniapp/0.0.0.md)
 
-<!-- ### 伍、JAVASCRIPT && ECMASCRIPT -->
+### 陆、TypeScript
+
+- [陆.0.0 注意点](typescript/0.0.0.md)
 
 ### 拾、GLOB
 
