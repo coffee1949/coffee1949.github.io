@@ -748,7 +748,7 @@
                                 
                                 <h1 id="&#x9879;&#x76EE;&#x642D;&#x5EFA;">&#x9879;&#x76EE;&#x642D;&#x5EFA;</h1>
 <h5 id="&#x9879;&#x76EE;&#x521B;&#x5EFA;">&#x9879;&#x76EE;&#x521B;&#x5EFA;</h5>
-<pre><code class="lang-javascript">yarn create vite myapp --template vue-ts
+<pre><code class="lang-javascript">yarn create vite myapp --template vue
 cd myapp
 yarn
 <span class="hljs-comment">// yarn dev</span>
@@ -757,22 +757,15 @@ yarn
 <pre><code class="lang-javascript"><span class="hljs-comment">// &#x5FC5;&#x88C5;</span>
 yarn add -D electron electron-builder cross-env concurrently
 <span class="hljs-comment">// &#x53EF;&#x9009;</span>
-yarn add -D wait-on @types/electron
+<span class="hljs-comment">// yarn add -D wait-on @types/electron</span>
 </code></pre>
 <h5 id="&#x914D;&#x7F6E;&#x5165;&#x53E3;&#x6587;&#x4EF6;descriptionauthor">&#x914D;&#x7F6E;&#x5165;&#x53E3;&#x6587;&#x4EF6;&amp;description&amp;author</h5>
 <pre><code class="lang-javascript"><span class="hljs-comment">// package.json</span>
 <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;myapp&quot;</span>,
 <span class="hljs-string">&quot;author&quot;</span>: <span class="hljs-string">&quot;coffee1949&quot;</span>,
-<span class="hljs-string">&quot;main&quot;</span>: <span class="hljs-string">&quot;electron/main.js&quot;</span>,
+<span class="hljs-string">&quot;main&quot;</span>: <span class="hljs-string">&quot;main.js&quot;</span>,
 </code></pre>
-<h5 id="&#x914D;&#x7F6E;scripts">&#x914D;&#x7F6E;scripts</h5>
-<pre><code class="lang-javascript"><span class="hljs-comment">// package.json</span>
-<span class="hljs-string">&quot;scripts&quot;</span>: {
-    <span class="hljs-string">&quot;dev&quot;</span>: <span class="hljs-string">&quot;concurrently -k vite \&quot;cross-env NODE_ENV=development electron .\&quot;&quot;</span>,
-    <span class="hljs-string">&quot;build&quot;</span>: <span class="hljs-string">&quot;vue-tsc --noEmit &amp;&amp; vite build &amp;&amp; electron-builder&quot;</span>
-},
-</code></pre>
-<h5 id="&#x521B;&#x5EFA;electron&#x76EE;&#x5F55;&#x548C;electronmainjs&#x6587;&#x4EF6;">&#x521B;&#x5EFA;electron&#x76EE;&#x5F55;&#x548C;electron/main.js&#x6587;&#x4EF6;</h5>
+<h5 id="&#x521B;&#x5EFA;&#x5165;&#x53E3;&#x6587;&#x4EF6;mainjs">&#x521B;&#x5EFA;&#x5165;&#x53E3;&#x6587;&#x4EF6;main.js</h5>
 <pre><code class="lang-javascript"><span class="hljs-comment">// main.js</span>
 <span class="hljs-keyword">const</span> { app, BrowserWindow } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;electron&apos;</span>)
 
@@ -793,6 +786,13 @@ yarn add -D wait-on @types/electron
 app.whenReady().then(()=&gt;{
     createWindow()
 })
+</code></pre>
+<h5 id="&#x914D;&#x7F6E;scripts">&#x914D;&#x7F6E;scripts</h5>
+<pre><code class="lang-javascript"><span class="hljs-comment">// package.json</span>
+<span class="hljs-string">&quot;scripts&quot;</span>: {
+    <span class="hljs-string">&quot;dev&quot;</span>: <span class="hljs-string">&quot;concurrently -k vite \&quot;cross-env NODE_ENV=development electron .\&quot;&quot;</span>,
+    <span class="hljs-string">&quot;build&quot;</span>: <span class="hljs-string">&quot;vite build &amp;&amp; electron-builder&quot;</span>
+},
 </code></pre>
 <h5 id="&#x542F;&#x52A8;&#x9879;&#x76EE;">&#x542F;&#x52A8;&#x9879;&#x76EE;</h5>
 <pre><code>yarn dev
@@ -820,6 +820,167 @@ app.whenReady().then(()=&gt;{
 
 app.whenReady().then(()=&gt;{
     createWindow()
+})
+</code></pre>
+<h5 id="&#x96C6;&#x6210;vue-router">&#x96C6;&#x6210;vue-router</h5>
+<p>1&#xFF0C;&#x5B89;&#x88C5;</p>
+<pre><code class="lang-javascript">yarn add vue-router
+</code></pre>
+<p>2&#xFF0C;&#x521B;&#x5EFA;3&#x4E2A;&#x9875;&#x9762;&#x89C6;&#x56FE;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-javascript">// 1&#xFF0C;src/pages/home/index.vue
+
+&lt;script lang=&apos;ts&apos; setup&gt;
+import { ref } from &apos;vue&apos;
+
+const msg = ref(&apos;home&apos;)
+&lt;/script&gt;
+
+&lt;template&gt;
+
+&lt;/template&gt;
+
+// 2&#xFF0C;src/pages/list/index.vue
+
+&lt;script lang=&apos;ts&apos; setup&gt;
+import { ref } from &apos;vue&apos;
+
+const msg = ref(&apos;list&apos;)
+&lt;/script&gt;
+
+&lt;template&gt;
+
+&lt;/template&gt;
+
+// 3&#xFF0C;src/pages/info/index.vue
+
+&lt;script lang=&apos;ts&apos; setup&gt;
+import { ref } from &apos;vue&apos;
+
+const msg = ref(&apos;info&apos;)
+&lt;/script&gt;
+
+&lt;template&gt;
+
+&lt;/template&gt;
+</code></pre>
+<p>3&#xFF0C;&#x521B;&#x5EFA; src/router/router.ts&#x6587;&#x4EF6;&#xFF0C;&#x5185;&#x5BB9;&#x5982;&#x4E0B;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { createRouter, createWebHistory } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vue-router&apos;</span>
+
+<span class="hljs-keyword">const</span> routes = [
+    {
+        path: <span class="hljs-string">&apos;/&apos;</span>,
+        name: <span class="hljs-string">&apos;home&apos;</span>,
+        component: ()=&gt;<span class="hljs-keyword">import</span>(<span class="hljs-string">&apos;@/pages/home/index.vue&apos;</span>)
+    },
+    {
+        path: <span class="hljs-string">&apos;/list&apos;</span>,
+        name: <span class="hljs-string">&apos;list&apos;</span>,
+        component: ()=&gt;<span class="hljs-keyword">import</span>(<span class="hljs-string">&apos;@/pages/list/index.vue&apos;</span>)
+    },
+    {
+        path: <span class="hljs-string">&apos;/info&apos;</span>,
+        name: <span class="hljs-string">&apos;info&apos;</span>,
+        component: ()=&gt;<span class="hljs-keyword">import</span>(<span class="hljs-string">&apos;@/pages/info/index.vue&apos;</span>)
+    },
+]
+
+<span class="hljs-keyword">const</span> router = createRouter({
+    history: createWebHistory(),
+    routes
+})
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> router
+</code></pre>
+<p>3&#xFF0C;&#x5728; main.ts&#x6587;&#x4EF6;&#x4E2D;&#x5F15;&#x5165; router.js&#x6587;&#x4EF6;&#xFF0C;main.ts&#x5185;&#x5BB9;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { createApp } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vue&apos;</span>
+<span class="hljs-keyword">import</span> router <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@/router/router&apos;</span>
+<span class="hljs-keyword">import</span> App <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@/App.vue&apos;</span>
+
+createApp(App).use(router).mount(<span class="hljs-string">&apos;#app&apos;</span>)
+</code></pre>
+<p>4&#xFF0C;&#x914D;&#x7F6E;@-src&#x6620;&#x5C04;</p>
+<blockquote>
+<p>&#x5728;vite.config.js&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x589E;&#x52A0;resolve.alias&#x914D;&#x7F6E;&#xFF0C;&#x5982;&#x4E0B;</p>
+</blockquote>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { defineConfig } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;vite&quot;</span>;
+<span class="hljs-keyword">import</span> vue <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@vitejs/plugin-vue&quot;</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> defineConfig({
+  plugins: [vue()],
+
+  <span class="hljs-comment">// &#x589E;&#x52A0;resolve.alias&#x914D;&#x7F6E;</span>
+  resolve: {
+    alias: {
+      <span class="hljs-string">&quot;@&quot;</span>: <span class="hljs-string">&quot;/src&quot;</span>,
+    },
+  },
+});
+</code></pre>
+<p>5&#xFF0C;&#x4FEE;&#x6539;app.vue&#x6587;&#x4EF6;&#x5185;&#x5BB9;</p>
+<pre><code class="lang-javascript">&lt;script setup&gt;
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
+
+&lt;template&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;router-link to=&apos;/&apos;&gt;home&lt;/router-link&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;router-link to=&apos;/list&apos;&gt;list&lt;/router-link&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;router-link to=&apos;/info&apos;&gt;info&lt;/router-link&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;router-view&gt;&lt;/router-view&gt;
+&lt;/template&gt;
+
+&lt;style&gt;
+&lt;/style&gt;
+</code></pre>
+<h5 id="&#x6253;&#x5305;&#xFF1A;yarn-build">&#x6253;&#x5305;&#xFF1A;yarn build</h5>
+<p>1&#xFF0C;&#x7A97;&#x53E3;&#x52A0;&#x8F7D;&#x7684;url&#x662F;&#x672C;&#x5730;&#x5F00;&#x53D1;&#x7684;&#x524D;&#x7AEF;&#x670D;&#x52A1;&#xFF0C;&#x9700;&#x8981;&#x6839;&#x636E;&#x73AF;&#x5883;&#x5224;&#x65AD;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> url = process.env.NODE_ENV === <span class="hljs-string">&apos;development&apos;</span> 
+    ? <span class="hljs-string">&apos;http://localhost:3000&apos;</span> 
+    : <span class="hljs-string">`file://<span class="hljs-subst">${__dirname}</span>/dist/index.html`</span>
+
+mainWindow.loadURL(url)
+</code></pre>
+<p>2&#xFF0C;&#x6253;&#x5305;&#x6D4B;&#x8BD5;&#xFF0C;&#x62A5;&#x9519;&#x627E;&#x4E0D;&#x5230;html</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// &#x8FDB;&#x5165;&#x5230;win-unpacked/resources&#x76EE;&#x5F55;&#xFF0C;&#x89E3;&#x5305;&#x770B;&#x4E0B;&#x8DEF;&#x5F84;&#x662F;&#x5426;&#x6B63;&#x786E;</span>
+<span class="hljs-comment">// &#x5168;&#x5C40;&#x5B89;&#x88C5;asar</span>
+npm i -g asar
+<span class="hljs-comment">// &#x89E3;&#x5305;</span>
+asar extract app.asar app
+</code></pre>
+<p>3&#xFF0C;&#x8DEF;&#x5F84;&#x6B63;&#x786E;&#x4EE5;&#x540E;&#xFF0C;&#x62A5;&#x9519;&#xFF1A;Failed to load resource: net::ERR_FILE_NOT_FOUND</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// &#x914D;&#x7F6E;package.json&#x7684;build&#x53C2;&#x6570;</span>
+<span class="hljs-string">&quot;build&quot;</span>: {
+  <span class="hljs-string">&quot;productName&quot;</span>: <span class="hljs-string">&quot;coffee&quot;</span>,
+  <span class="hljs-string">&quot;appId&quot;</span>: <span class="hljs-string">&quot;com.coffee.app&quot;</span>,
+  <span class="hljs-string">&quot;copyright&quot;</span>: <span class="hljs-string">&quot;copyright @ coffee&quot;</span>,
+  <span class="hljs-string">&quot;directories&quot;</span>: {
+    <span class="hljs-string">&quot;output&quot;</span>: <span class="hljs-string">&quot;out&quot;</span>
+  },
+  <span class="hljs-string">&quot;files&quot;</span>: [ <span class="hljs-comment">// &#x8FD9;&#x91CC;&#x91CD;&#x8981;</span>
+    <span class="hljs-string">&quot;./dist/**/*&quot;</span>,
+    <span class="hljs-string">&quot;./main.js&quot;</span>
+  ]
+}
+</code></pre>
+<p>4&#xFF0C;&#x4E4B;&#x540E;&#x62A5;&#x9519;&#xFF1A;GET file:///C:/src/main.js net::ERR_FILE_NOT_FOUND</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// &#x914D;&#x7F6E;vite.config.js&#x7684;base&#x53C2;&#x6570;</span>
+<span class="hljs-keyword">import</span> { defineConfig } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vite&apos;</span>
+<span class="hljs-keyword">import</span> vue <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@vitejs/plugin-vue&apos;</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> defineConfig({
+  plugins: [vue()],
+  base: <span class="hljs-string">&apos;./&apos;</span>, <span class="hljs-comment">// &#x8FD9;&#x91CC;</span>
+  resolve: {
+    alias: {
+      <span class="hljs-string">&quot;@&quot;</span>: <span class="hljs-string">&quot;/src&quot;</span>,
+    },
+  },
 })
 </code></pre>
 
@@ -865,7 +1026,7 @@ app.whenReady().then(()=&gt;{
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"柒.0.4 Electron项目搭建","level":"9.5","depth":1,"next":{"title":"拾.0.0 前端工程化~强大的glob语法","level":"10.1","depth":1,"path":"glob/0.0.0.md","ref":"glob/0.0.0.md","articles":[]},"previous":{"title":"柒.0.3 Electron常见问题","level":"9.4","depth":1,"path":"electron/0.0.3.md","ref":"electron/0.0.3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro"],"root":"workspace","styles":{"website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"coffee1949","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"前端笔记","language":"zh-hans","links":{"sidebar":{"知乎":"https://www.zhihu.com/people/codeing.cn/posts"}},"gitbook":"*","description":"前端笔记(front-end-notes)"},"file":{"path":"electron/0.0.4.md","mtime":"2022-06-12T06:12:45.478Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-06-12T06:15:18.708Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"柒.0.4 Electron项目搭建","level":"9.5","depth":1,"next":{"title":"拾.0.0 前端工程化~强大的glob语法","level":"10.1","depth":1,"path":"glob/0.0.0.md","ref":"glob/0.0.0.md","articles":[]},"previous":{"title":"柒.0.3 Electron常见问题","level":"9.4","depth":1,"path":"electron/0.0.3.md","ref":"electron/0.0.3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro"],"root":"workspace","styles":{"website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"coffee1949","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"前端笔记","language":"zh-hans","links":{"sidebar":{"知乎":"https://www.zhihu.com/people/codeing.cn/posts"}},"gitbook":"*","description":"前端笔记(front-end-notes)"},"file":{"path":"electron/0.0.4.md","mtime":"2022-06-12T11:36:24.682Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-06-12T11:39:05.609Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
