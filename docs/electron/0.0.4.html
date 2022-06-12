@@ -946,15 +946,14 @@ createApp(App).use(router).mount(<span class="hljs-string">&apos;#app&apos;</spa
 
 mainWindow.loadURL(url)
 </code></pre>
-<p>2&#xFF0C;&#x6253;&#x5305;&#x6D4B;&#x8BD5;&#xFF0C;&#x62A5;&#x9519;&#x627E;&#x4E0D;&#x5230;html</p>
+<p>2&#xFF0C;&#x6253;&#x5305;&#x6D4B;&#x8BD5;&#xFF0C;&#x62A5;&#x9519;&#x627E;&#x4E0D;&#x5230;html&#xFF0C;&#x914D;&#x7F6E;package.json&#x7684;build&#x7684;files</p>
 <pre><code class="lang-javascript"><span class="hljs-comment">// &#x8FDB;&#x5165;&#x5230;win-unpacked/resources&#x76EE;&#x5F55;&#xFF0C;&#x89E3;&#x5305;&#x770B;&#x4E0B;&#x8DEF;&#x5F84;&#x662F;&#x5426;&#x6B63;&#x786E;</span>
 <span class="hljs-comment">// &#x5168;&#x5C40;&#x5B89;&#x88C5;asar</span>
 npm i -g asar
 <span class="hljs-comment">// &#x89E3;&#x5305;</span>
-asar extract app.asar app
-</code></pre>
-<p>3&#xFF0C;&#x8DEF;&#x5F84;&#x6B63;&#x786E;&#x4EE5;&#x540E;&#xFF0C;&#x62A5;&#x9519;&#xFF1A;Failed to load resource: net::ERR_FILE_NOT_FOUND</p>
-<pre><code class="lang-javascript"><span class="hljs-comment">// &#x914D;&#x7F6E;package.json&#x7684;build&#x53C2;&#x6570;</span>
+asar extract app.asar app <span class="hljs-comment">// &#x67E5;&#x770B;&#x8DEF;&#x5F84;&#x6B63;&#x786E;&#x5426;</span>
+
+<span class="hljs-comment">// &#x914D;&#x7F6E;package.json&#x7684;build&#x53C2;&#x6570;</span>
 <span class="hljs-string">&quot;build&quot;</span>: {
   <span class="hljs-string">&quot;productName&quot;</span>: <span class="hljs-string">&quot;coffee&quot;</span>,
   <span class="hljs-string">&quot;appId&quot;</span>: <span class="hljs-string">&quot;com.coffee.app&quot;</span>,
@@ -968,7 +967,7 @@ asar extract app.asar app
   ]
 }
 </code></pre>
-<p>4&#xFF0C;&#x4E4B;&#x540E;&#x62A5;&#x9519;&#xFF1A;GET file:///C:/src/main.js net::ERR_FILE_NOT_FOUND</p>
+<p>3&#xFF0C;&#x4E4B;&#x540E;&#x62A5;&#x9519;&#xFF1A;GET file:///C:/src/main.js net::ERR_FILE_NOT_FOUND</p>
 <pre><code class="lang-javascript"><span class="hljs-comment">// &#x914D;&#x7F6E;vite.config.js&#x7684;base&#x53C2;&#x6570;</span>
 <span class="hljs-keyword">import</span> { defineConfig } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vite&apos;</span>
 <span class="hljs-keyword">import</span> vue <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@vitejs/plugin-vue&apos;</span>
@@ -1026,7 +1025,7 @@ asar extract app.asar app
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"柒.0.4 Electron项目搭建","level":"9.5","depth":1,"next":{"title":"拾.0.0 前端工程化~强大的glob语法","level":"10.1","depth":1,"path":"glob/0.0.0.md","ref":"glob/0.0.0.md","articles":[]},"previous":{"title":"柒.0.3 Electron常见问题","level":"9.4","depth":1,"path":"electron/0.0.3.md","ref":"electron/0.0.3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro"],"root":"workspace","styles":{"website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"coffee1949","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"前端笔记","language":"zh-hans","links":{"sidebar":{"知乎":"https://www.zhihu.com/people/codeing.cn/posts"}},"gitbook":"*","description":"前端笔记(front-end-notes)"},"file":{"path":"electron/0.0.4.md","mtime":"2022-06-12T11:36:24.682Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-06-12T11:39:05.609Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"柒.0.4 Electron项目搭建","level":"9.5","depth":1,"next":{"title":"拾.0.0 前端工程化~强大的glob语法","level":"10.1","depth":1,"path":"glob/0.0.0.md","ref":"glob/0.0.0.md","articles":[]},"previous":{"title":"柒.0.3 Electron常见问题","level":"9.4","depth":1,"path":"electron/0.0.3.md","ref":"electron/0.0.3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro"],"root":"workspace","styles":{"website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"coffee1949","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"前端笔记","language":"zh-hans","links":{"sidebar":{"知乎":"https://www.zhihu.com/people/codeing.cn/posts"}},"gitbook":"*","description":"前端笔记(front-end-notes)"},"file":{"path":"electron/0.0.4.md","mtime":"2022-06-12T11:51:53.694Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-06-12T11:56:59.320Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
