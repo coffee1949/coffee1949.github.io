@@ -1,0 +1,37 @@
+{
+  "id": "2451536",
+  "name": "devops",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "16020747",
+      "name": "折叠2",
+      "font_class": "zhedie2",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
+      "icon_id": "16020767",
+      "name": "折叠1",
+      "font_class": "zhedie1",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
+      "icon_id": "562680",
+      "name": "Full screen",
+      "font_class": "fullscreen",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "17412289",
+      "name": "Full Screen Zoom",
+      "font_class": "FullScreenZoom",
+      "unicode": "e683",
+      "unicode_decimal": 59011
+    }
+  ]
+}

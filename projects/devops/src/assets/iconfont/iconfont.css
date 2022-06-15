@@ -1,0 +1,33 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1616999332934'); /* IE9 */
+  src: url('iconfont.eot?t=1616999332934#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAARUAAsAAAAACkQAAAQHAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDKgqHWIYfATYCJAMUCwwABCAFhG0HWRu0CFGULkqF7A/FG4tIPagsmHENRgajaAJReaXDgbBHXe7DV5+f2HaDen7pZl+5/LTqElWqTABXhUEhFM6guvMogz5j7/7X2twdKqFMxdYi6km0rczf9dmvj3udlkmJECE05l37bV9g5992h2hIqqW4NTG7gZ8gyS2JWGjQeDQlyNvhJ6lRSybRZOtC6RogwMx8g4QMHspgj+P8/wZsu7v3f3/sNyviCZL5wxuhUKO9j6hOtZmEOA9Zu4hGbqltocYt4tlkPifhbQh0rGwb9Mv7J5gRxIsENMs8hhlPXCTwpISqiDsDPcxKfrdHwIfx9/qiZsBkQbzyZRcZHL/nrU3SNRJYXRZg7wMHZ0BAIzL/ZmT1no10PsdPuAMUhaGqXl8DaRBDcSTmOyj6j2cCqoj+HtAffDFlqJjhqDFDqDXDUEdsFH/i+R2wAOoA2oS+9qZULaKJflcTI3gJn2O322wNvLLUuswIZLVtJZ6VHT7m9DjDRc1M3tZiY0L6jpQbEhvUVke+ImttUpFOcDQtayLUdSmBqMABgaLQgQSsjcN0w8Q4hqg4nO1IjEowrZcJdADU6W1ioSYrrbhAJVIsLSsOoKo4iehQhFDTaJIA9XGYbpgjhiG6FM4W46MYpmUzzLNKGHV+YtxBg9aluQUxUZ+Sknh/FSco43w3pOWVSYibCV11xGsLfDcD21Y56AUMWZ4Q7LmOXQ0N/P3V6m7lb3ityn68cUzs9M0f455cShv3xttWfqQ58p8z/MYYyMeJ2KpE5GGliLOT6lv/ZjWmdpraR5zzSuklNOlMgSOnCcSjFeQfmJnJi+IzOYqA1C3unUb3VldcAU0W/B9rSnLCYqsjGl4ofB3sfa2eerv+GCIcbPPzABvM+/YGOF3d4t3BBvs94rdHXmBx+bEBMCu4J2H6Sby1lhPc3853H2f1AXwSd/m1X8Og2Wfdt8Xb/NQ8Fa2Fjazl/X/EBLXr/985tAEnAJ5f+METETOuiK9LTGS8ZyvO99j0C2GXRulIKTgBB2Hir5rgPDMPFJw7YFqW4Io1OehnSF0XqBT30HFydX/XlDKiaANHXwRk5BvMwB+4kR9y0H8hLfxDZdQIOl5bf2LXtnLuTFFsKMNkjGXKnZBTZs6c+EC5bWLldhmKF1K6bGHoBf6BK+pIVXGNdnlkjEChuMVL8j5qGsZecUWp8Qpj+l3fF1E/5KXcwpxnCokZJIMSY6iUYh2hrW/MBX7/AclZjZhKmPNj+YIoWrl3FPIEGchX/i7TnF2Zrjm5iMFuAQl2PGuhS8ySRuplqI8+rUJShqco0N3b5eNaIqvfaz7YrmN8EuYV35XJ5AqlKlqnoKykyLgmnBO2aXSqiLqlS4H6OOKDuQUAAA==') format('woff2'),
+  url('iconfont.woff?t=1616999332934') format('woff'),
+  url('iconfont.ttf?t=1616999332934') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1616999332934#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-zhedie2:before {
+  content: "\e620";
+}
+
+.icon-zhedie1:before {
+  content: "\e621";
+}
+
+.icon-fullscreen:before {
+  content: "\e61e";
+}
+
+.icon-FullScreenZoom:before {
+  content: "\e683";
+}
+
