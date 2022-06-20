@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>叁.0.0 基本用法 · 前端笔记</title>
+        <title>捌.0.2 独立按键控制LED亮灭 · 前端笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -49,10 +49,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="0.0.1.html" />
+    <link rel="next" href="../glob/0.0.0.html" />
     
     
-    <link rel="prev" href="../css/0.0.0.html" />
+    <link rel="prev" href="0.0.2.html" />
     
 
     </head>
@@ -183,9 +183,9 @@
         
         
     
-        <li class="chapter active" data-level="5.1" data-path="0.0.0.html">
+        <li class="chapter " data-level="5.1" data-path="../git/0.0.0.html">
             
-                <a href="0.0.0.html">
+                <a href="../git/0.0.0.html">
             
                     
                     叁.0.0 基本用法
@@ -196,9 +196,9 @@
             
         </li>
     
-        <li class="chapter " data-level="5.2" data-path="0.0.1.html">
+        <li class="chapter " data-level="5.2" data-path="../git/0.0.1.html">
             
-                <a href="0.0.1.html">
+                <a href="../git/0.0.1.html">
             
                     
                     叁.0.1 回退版本：本地 && 远程
@@ -209,9 +209,9 @@
             
         </li>
     
-        <li class="chapter " data-level="5.3" data-path="0.0.2.html">
+        <li class="chapter " data-level="5.3" data-path="../git/0.0.2.html">
             
-                <a href="0.0.2.html">
+                <a href="../git/0.0.2.html">
             
                     
                     叁.0.2 打标签
@@ -222,9 +222,9 @@
             
         </li>
     
-        <li class="chapter " data-level="5.4" data-path="0.0.3.html">
+        <li class="chapter " data-level="5.4" data-path="../git/0.0.3.html">
             
-                <a href="0.0.3.html">
+                <a href="../git/0.0.3.html">
             
                     
                     叁.0.3 删除缓存的远程分支列表
@@ -439,9 +439,9 @@
         
         
     
-        <li class="chapter " data-level="10.1" data-path="../mcu/0.0.0.html">
+        <li class="chapter " data-level="10.1" data-path="0.0.0.html">
             
-                <a href="../mcu/0.0.0.html">
+                <a href="0.0.0.html">
             
                     
                     捌.0.0 软件及资料下载
@@ -452,9 +452,9 @@
             
         </li>
     
-        <li class="chapter " data-level="10.2" data-path="../mcu/0.0.1.html">
+        <li class="chapter " data-level="10.2" data-path="0.0.1.html">
             
-                <a href="../mcu/0.0.1.html">
+                <a href="0.0.1.html">
             
                     
                     捌.0.1 开发环境搭建
@@ -465,9 +465,9 @@
             
         </li>
     
-        <li class="chapter " data-level="10.3" data-path="../mcu/0.0.2.html">
+        <li class="chapter " data-level="10.3" data-path="0.0.2.html">
             
-                <a href="../mcu/0.0.2.html">
+                <a href="0.0.2.html">
             
                     
                     捌.0.2 流水灯
@@ -478,9 +478,9 @@
             
         </li>
     
-        <li class="chapter " data-level="10.4" data-path="../mcu/0.0.3.html">
+        <li class="chapter active" data-level="10.4" data-path="0.0.3.html">
             
-                <a href="../mcu/0.0.3.html">
+                <a href="0.0.3.html">
             
                     
                     捌.0.2 独立按键控制LED亮灭
@@ -790,7 +790,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >叁.0.0 基本用法</a>
+        <a href=".." >捌.0.2 独立按键控制LED亮灭</a>
     </h1>
 </div>
 
@@ -805,101 +805,9 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x57FA;&#x672C;&#x7528;&#x6CD5;">&#x57FA;&#x672C;&#x7528;&#x6CD5;</h1>
-<h5 id="&#x914D;&#x7F6E;">&#x914D;&#x7F6E;</h5>
-<pre><code>// &#x8BBE;&#x7F6E;&#x7528;&#x6237;&#x540D;&#x548C;&#x90AE;&#x7BB1;
-git config --global user.email &quot;you@example.com&quot;
-git config --global user.name &quot;Your Name&quot;
+                                <h1 id="&#x72EC;&#x7ACB;&#x6309;&#x952E;&#x63A7;&#x5236;led&#x4EAE;&#x706D;">&#x72EC;&#x7ACB;&#x6309;&#x952E;&#x63A7;&#x5236;LED&#x4EAE;&#x706D;</h1>
+<h5 id=""> </h5>
 
-// &#x67E5;&#x770B;&#x5168;&#x5C40;&#x914D;&#x7F6E;
-git config --global --list
-</code></pre><h5 id="git-stash">git stash</h5>
-<pre><code>// &#x4FDD;&#x5B58;&#x72B6;&#x6001;
-git stash
-// &#x67E5;&#x770B;
-git stash list
-// &#x6062;&#x590D;
-// pop&#x72B6;&#x6001;&#x6062;&#x590D;&#x5E76;&#x5220;&#x9664;&#x8BB0;&#x5F55;&#xFF0C;apply&#x72B6;&#x6001;&#x6062;&#x590D;&#xFF0C;drop&#x5220;&#x9664;&#x8BB0;&#x5F55;
-git stash pop || git stash apply &amp;&amp; git stash drop
-</code></pre><h5 id="&#x5206;&#x652F;">&#x5206;&#x652F;</h5>
-<pre><code class="lang-javascript">
-<span class="hljs-comment">// git pull &#x786E;&#x4FDD;&#x672C;&#x5730;&#x5206;&#x652F;&#x662F;&#x65B0;&#x7684;</span>
-
-<span class="hljs-comment">// &#x67E5;&#x770B;&#x672C;&#x5730;&#x5206;&#x652F;</span>
-git branch
-
-<span class="hljs-comment">// &#x67E5;&#x770B;&#x8FDC;&#x7A0B;&#x5206;&#x652F;</span>
-git branch -r
-
-<span class="hljs-comment">// &#x67E5;&#x770B;&#x6240;&#x6709;&#x5206;&#x652F;</span>
-git branch -a
-
-<span class="hljs-comment">// &#x65B0;&#x5EFA;&#x672C;&#x5730;&#x5206;&#x652F;&#xFF1A;dev</span>
-git branch dev
-
-<span class="hljs-comment">// &#x5207;&#x6362;&#x5230;&#x672C;&#x5730;dev&#x5206;&#x652F;</span>
-git checkout dev
-
-<span class="hljs-comment">// &#x65B0;&#x5EFA;&#x672C;&#x5730;&#x5206;&#x652F;issue-001&#x5E76;&#x5207;&#x6362;&#x5230;issue-001&#x5206;&#x652F;</span>
-git checkout -b issue<span class="hljs-number">-001</span>
-
-<span class="hljs-comment">// &#x65B0;&#x5EFA;&#x672C;&#x5730;&#x5206;&#x652F;&#x5E76;&#x8FFD;&#x8E2A;&#x8FDC;&#x7AEF;&#x5206;&#x652F;&#xFF1A;&#x6839;&#x636E;&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x65B0;&#x5EFA;&#x672C;&#x5730;&#x5206;&#x652F; &amp;&amp; &#x5EFA;&#x7ACB;&#x5173;&#x8054;&#x5173;&#x7CFB;</span>
-git checkout -b release/release1<span class="hljs-number">.15</span><span class="hljs-number">.1</span> origin/release/release1<span class="hljs-number">.15</span><span class="hljs-number">.1</span>
-
-
-<span class="hljs-comment">// &#x65B0;&#x5EFA;&#x672C;&#x5730;&#x5206;&#x652F;&#xFF0C;&#x5E76;&#x5207;&#x6362;&#x5230;&#x65B0;&#x5EFA;&#x7684;&#x672C;&#x5730;&#x5206;&#x652F;&#xFF0C;&#x62C9;&#x53D6;&#x5BF9;&#x5E94;&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x5185;&#x5BB9;&#xFF0C;&#x5E76;&#x8FFD;&#x8E2A;&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#xFF08;&#x4E0E;&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x5173;&#x8054;&#xFF09;</span>
-<span class="hljs-comment">// &#x65B9;&#x5F0F;&#x4E00;</span>
-git branch branchName <span class="hljs-comment">// &#x65B0;&#x5EFA;&#x4E0E;&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x76F8;&#x5BF9;&#x5E94;&#x7684;&#x5206;&#x652F;</span>
-git checkout branchName <span class="hljs-comment">// &#x5207;&#x6362;&#x5230;&#x65B0;&#x5EFA;&#x5206;&#x652F;</span>
-git pull origin branchName <span class="hljs-comment">// &#x66F4;&#x65B0;&#x65B0;&#x5206;&#x652F;&#x6570;&#x636E;&#xFF0C;&#x4E0E;&#x8FDC;&#x7A0B;&#x8FDB;&#x884C;&#x540C;&#x6B65;</span>
-<span class="hljs-comment">// -u &#x662F; --set-upstream &#x7684;&#x7B80;&#x5199;&#x5F62;&#x5F0F;&#xFF0C;&#x672C;&#x5730;&#x5206;&#x652F;&#x4E0E;&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x5173;&#x8054;</span>
-git push -u origin branchName || git push --set-upstream origin feature
-<span class="hljs-comment">// &#x65B9;&#x5F0F;&#x4E8C;</span>
-git branch branchName
-git checkout branchName
-git pull origin branchName <span class="hljs-comment">// &#x66F4;&#x65B0;&#x65B0;&#x5206;&#x652F;&#x6570;&#x636E;&#xFF0C;&#x4E0E;&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x8FDB;&#x884C;&#x540C;&#x6B65;</span>
-<span class="hljs-comment">// &#x672C;&#x5730;&#x5206;&#x652F;&#x4E0E;&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x5173;&#x8054;</span>
-git branch --set-upstream-to=origin/branchName branchName
-<span class="hljs-comment">// &#x5173;&#x8054;&#x540E;&#x4EE5;&#x540E;&#x76F4;&#x63A5; git push &#x5C31;&#x53EF;&#x4EE5;&#x4E86;</span>
-git push
-
-
-<span class="hljs-comment">// &#x65B0;&#x5EFA;&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x7684;&#x4E8C;&#x79CD;&#x65B9;&#x5F0F;</span>
-<span class="hljs-comment">// &#x65B9;&#x5F0F;&#x4E00;&#xFF1A;&#x76F4;&#x63A5;&#x5728;github&#x6216;&#x8005;gitee&#x7B49;&#x4EE3;&#x7801;&#x6258;&#x7BA1;&#x5E73;&#x53F0;&#x65B0;&#x5EFA;&#x5206;&#x652F;</span>
-<span class="hljs-comment">// &#x65B9;&#x5F0F;&#x4E8C;&#xFF1A;&#x628A;&#x672C;&#x5730;&#x5F53;&#x524D;&#x5206;&#x652F;push&#x5230;&#x8FDC;&#x7A0B;&#x5206;&#x652F;</span>
-git push origin &lt;&#x8FDC;&#x7A0B;&#x5206;&#x652F;&#x540D;&gt;
-
-
-<span class="hljs-comment">// &#x5220;&#x9664;&#x672C;&#x5730;&#x5206;&#x652F;</span>
-git branch -d branchName
-git branch -D branchName <span class="hljs-comment">// &#x5F3A;&#x5236;&#x5220;&#x9664;</span>
-
-
-<span class="hljs-comment">// &#x5220;&#x9664;&#x8FDC;&#x7A0B;&#x5206;&#x652F;</span>
-git push origin --<span class="hljs-keyword">delete</span> branchName
-</code></pre>
-<h5 id="git-log&#x67E5;&#x770B;&#x65E5;&#x5FD7;">git log&#x67E5;&#x770B;&#x65E5;&#x5FD7;</h5>
-<h5 id="git-reflog&#x67E5;&#x770B;commits">git reflog&#x67E5;&#x770B;commits</h5>
-<h5 id="push&#x540E;&#x64A4;&#x9500;push&#x64CD;&#x4F5C;">push&#x540E;&#x64A4;&#x9500;push&#x64CD;&#x4F5C;</h5>
-<pre><code>// &#x5148;&#x5728;&#x672C;&#x5730;&#x56DE;&#x9000;&#x5230;&#x76F8;&#x5E94;&#x7684;&#x7248;&#x672C;&#xFF1A;
-git reset --hard &lt;&#x7248;&#x672C;&#x53F7;&gt;
-// &#x6CE8;&#x610F;&#x4F7F;&#x7528; --hard &#x53C2;&#x6570;&#x4F1A;&#x629B;&#x5F03;&#x5F53;&#x524D;&#x5DE5;&#x4F5C;&#x533A;&#x7684;&#x4FEE;&#x6539;
-// &#x4F7F;&#x7528; --soft &#x53C2;&#x6570;&#x7684;&#x8BDD;&#x4F1A;&#x56DE;&#x9000;&#x5230;&#x4E4B;&#x524D;&#x7684;&#x7248;&#x672C;&#xFF0C;&#x4F46;&#x662F;&#x4FDD;&#x7559;&#x5F53;&#x524D;&#x5DE5;&#x4F5C;&#x533A;&#x7684;&#x4FEE;&#x6539;&#xFF0C;&#x53EF;&#x4EE5;&#x91CD;&#x65B0;&#x63D0;&#x4EA4;
-
-// &#x5982;&#x679C;&#x6B64;&#x65F6;&#x4F7F;&#x7528;&#x547D;&#x4EE4;&#xFF1A;
-git push origin &lt;&#x5206;&#x652F;&#x540D;&gt;
-// &#x4F1A;&#x63D0;&#x793A;&#x672C;&#x5730;&#x7684;&#x7248;&#x672C;&#x843D;&#x540E;&#x4E8E;&#x8FDC;&#x7AEF;&#x7684;&#x7248;&#x672C;&#xFF1B;
-// &#x4E3A;&#x4E86;&#x8986;&#x76D6;&#x6389;&#x8FDC;&#x7AEF;&#x7684;&#x7248;&#x672C;&#x4FE1;&#x606F;&#xFF0C;&#x4F7F;&#x8FDC;&#x7AEF;&#x7684;&#x4ED3;&#x5E93;&#x4E5F;&#x56DE;&#x9000;&#x5230;&#x76F8;&#x5E94;&#x7684;&#x7248;&#x672C;&#xFF0C;&#x9700;&#x8981;&#x52A0;&#x4E0A;&#x53C2;&#x6570;--force
-git push origin &lt;&#x5206;&#x652F;&#x540D;&gt; --force
-</code></pre><h5 id="&#x64A4;&#x9500;&#x5DE5;&#x4F5C;&#x7A7A;&#x95F4;&#xFF08;&#x8FD8;&#x6CA1;-git-add&#xFF09;&#x7684;&#x66F4;&#x6539;">&#x64A4;&#x9500;&#x5DE5;&#x4F5C;&#x7A7A;&#x95F4;&#xFF08;&#x8FD8;&#x6CA1; git add&#xFF09;&#x7684;&#x66F4;&#x6539;</h5>
-<pre><code>// &#x64A4;&#x9500;&#x5355;&#x4E2A;&#x6216;&#x591A;&#x4E2A;
-git restore &lt;file&gt;...
-// &#x64A4;&#x9500;&#x5168;&#x90E8;
-git restore .
-</code></pre><h5 id="&#x64A4;&#x9500;&#x6682;&#x5B58;&#xFF08;&#x5DF2;&#x7ECF;-git-add&#xFF09;&#x7684;&#x66F4;&#x6539;">&#x64A4;&#x9500;&#x6682;&#x5B58;&#xFF08;&#x5DF2;&#x7ECF; git add&#xFF09;&#x7684;&#x66F4;&#x6539;</h5>
-<pre><code>git restore --staged &lt;file&gt;...
-git restore --staged .
-</code></pre>
                                 
                                 </section>
                             
@@ -926,12 +834,12 @@ git restore --staged .
 
             
                 
-                <a href="../css/0.0.0.html" class="navigation navigation-prev " aria-label="Previous page: 贰.0.0 css reset">
+                <a href="0.0.2.html" class="navigation navigation-prev " aria-label="Previous page: 捌.0.2 流水灯">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="0.0.1.html" class="navigation navigation-next " aria-label="Next page: 叁.0.1 回退版本：本地 && 远程">
+                <a href="../glob/0.0.0.html" class="navigation navigation-next " aria-label="Next page: 拾.0.0 前端工程化~强大的glob语法">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -942,7 +850,7 @@ git restore --staged .
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"叁.0.0 基本用法","level":"5.1","depth":1,"next":{"title":"叁.0.1 回退版本：本地 && 远程","level":"5.2","depth":1,"path":"git/0.0.1.md","ref":"git/0.0.1.md","articles":[]},"previous":{"title":"贰.0.0 css reset","level":"4.1","depth":1,"path":"css/0.0.0.md","ref":"css/0.0.0.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro"],"root":"workspace","styles":{"website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"coffee1949","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"前端笔记","language":"zh-hans","links":{"sidebar":{"知乎":"https://www.zhihu.com/people/codeing.cn/posts"}},"gitbook":"*","description":"前端笔记(front-end-notes)"},"file":{"path":"git/0.0.0.md","mtime":"2022-03-05T02:24:13.900Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-06-20T06:40:27.067Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"捌.0.2 独立按键控制LED亮灭","level":"10.4","depth":1,"next":{"title":"拾.0.0 前端工程化~强大的glob语法","level":"11.1","depth":1,"path":"glob/0.0.0.md","ref":"glob/0.0.0.md","articles":[]},"previous":{"title":"捌.0.2 流水灯","level":"10.3","depth":1,"path":"mcu/0.0.2.md","ref":"mcu/0.0.2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro"],"root":"workspace","styles":{"website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"highlight":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"coffee1949","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"前端笔记","language":"zh-hans","links":{"sidebar":{"知乎":"https://www.zhihu.com/people/codeing.cn/posts"}},"gitbook":"*","description":"前端笔记(front-end-notes)"},"file":{"path":"mcu/0.0.3.md","mtime":"2022-06-18T14:03:08.265Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-06-20T06:40:27.067Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
